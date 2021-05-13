@@ -7,7 +7,7 @@
 <p>建立 cmsimde 目錄, 並從 github 取下子模組內容.</p>
 <p>3.在近端維護時, 更換目錄到倉儲中的 cmsimde, 以 python wsgi.py 啟動近端網際伺服器.</p>
 <p>動態內容編輯完成後, 以 generate_pages 轉為靜態內容, 以 git add commit 及 push 將內容推到遠端.</p>
-<p>4. 之後若要以 git clone 取下包含 submodule 的所有內容, 執行:</p>
+<p>4. 之後若要以 git clone 取下包含 submodule 的所有內容, 執行</p>
 <p>git clone --recurse-submodules <a href="https://github.com/mdecourse/newcms.git">https://github.com/mdecourse/newcms.git</a></p>
 <h1>WORKS</h1>
 <h2>stage 1</h2>
@@ -96,7 +96,423 @@
 <p><img alt="" height="188" src="https://40823241.github.io/stage2-bg5/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202021-04-23%20130528.jpg" width="400"/></p>
 <h3>W9</h3>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Bi5UnJ_eW54" width="560"></iframe></p>
+<h2>stage 3</h2>
+<h3>W10</h3>
+<h3>task 1</h3>
+<p>讀取 stage3_2a.txt, 建立 Stage3 的分組倉儲, 分組網頁, 以及各組員倉儲及網頁連結.</p>
+<p>已知<span> </span><a href="http://mde.tw/cd2021/downloads/stage3/stage3_2a.txt">stage3_2a.txt</a><span> </span>與<span> </span><a href="http://mde.tw/cd2021/downloads/stage3/stage3_2b.txt">stage3_2b.txt</a><span> </span>內容, 以及初步資料讀取程式:</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_375707">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py comments"># open file, default is read mode, since txt content no chinese char</code></div>
+<div class="line number2 index1 alt1"><code class="py comments"># no encoding = "UTF-8" is needed</code></div>
+<div class="line number3 index2 alt2"><code class="py plain">with </code><code class="py functions">open</code><code class="py plain">(</code><code class="py string">"stage3_2a.txt"</code><code class="py plain">) as fh:</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code><code class="py comments"># readlines will read into the whole line and put into list format</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py comments"># has \n at the end of each line</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">    </code><code class="py plain">data </code><code class="py keyword">=</code> <code class="py plain">fh.readlines()</code></div>
+<div class="line number7 index6 alt2"><code class="py comments">#print(len(data))</code></div>
+<div class="line number8 index7 alt1"><code class="py keyword">for</code> <code class="py plain">i </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py functions">len</code><code class="py plain">(data)):</code></div>
+<div class="line number9 index8 alt2"><code class="py spaces">    </code><code class="py plain">group </code><code class="py keyword">=</code> <code class="py plain">data[i].rstrip(</code><code class="py string">"\n"</code><code class="py plain">).split(</code><code class="py string">"\t"</code><code class="py plain">)</code></div>
+<div class="line number10 index9 alt1"><code class="py spaces">    </code><code class="py functions">print</code><code class="py plain">(group)</code></div>
+<div class="line number11 index10 alt2"><code class="py comments"># the following will use group data to generate needed html</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>以下為每組亂數抽選 2 名組員的程式碼:</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_893327">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+<div class="line number21 index20 alt2">21</div>
+<div class="line number22 index21 alt1">22</div>
+<div class="line number23 index22 alt2">23</div>
+<div class="line number24 index23 alt1">24</div>
+<div class="line number25 index24 alt2">25</div>
+<div class="line number26 index25 alt1">26</div>
+<div class="line number27 index26 alt2">27</div>
+<div class="line number28 index27 alt1">28</div>
+<div class="line number29 index28 alt2">29</div>
+<div class="line number30 index29 alt1">30</div>
+<div class="line number31 index30 alt2">31</div>
+<div class="line number32 index31 alt1">32</div>
+<div class="line number33 index32 alt2">33</div>
+<div class="line number34 index33 alt1">34</div>
+<div class="line number35 index34 alt2">35</div>
+<div class="line number36 index35 alt1">36</div>
+<div class="line number37 index36 alt2">37</div>
+<div class="line number38 index37 alt1">38</div>
+<div class="line number39 index38 alt2">39</div>
+<div class="line number40 index39 alt1">40</div>
+<div class="line number41 index40 alt2">41</div>
+<div class="line number42 index41 alt1">42</div>
+<div class="line number43 index42 alt2">43</div>
+<div class="line number44 index43 alt1">44</div>
+<div class="line number45 index44 alt2">45</div>
+<div class="line number46 index45 alt1">46</div>
+<div class="line number47 index46 alt2">47</div>
+<div class="line number48 index47 alt1">48</div>
+<div class="line number49 index48 alt2">49</div>
+<div class="line number50 index49 alt1">50</div>
+<div class="line number51 index50 alt2">51</div>
+<div class="line number52 index51 alt1">52</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py comments"># open file, default is read mode, since txt content no chinese char</code></div>
+<div class="line number2 index1 alt1"><code class="py comments"># no encoding = "UTF-8" is needed</code></div>
+<div class="line number3 index2 alt2"><code class="py keyword">import</code> <code class="py plain">random</code></div>
+<div class="line number4 index3 alt1"> </div>
+<div class="line number5 index4 alt2"><code class="py comments"># number of group menber to draw</code></div>
+<div class="line number6 index5 alt1"><code class="py plain">num </code><code class="py keyword">=</code> <code class="py value">2</code></div>
+<div class="line number7 index6 alt2"> </div>
+<div class="line number8 index7 alt1"><code class="py comments"># check if data is "" or not</code></div>
+<div class="line number9 index8 alt2"><code class="py keyword">def</code> <code class="py plain">notVacant(data):</code></div>
+<div class="line number10 index9 alt1"><code class="py spaces">    </code><code class="py keyword">if</code> <code class="py plain">data </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py plain">"":</code></div>
+<div class="line number11 index10 alt2"><code class="py spaces">        </code><code class="py keyword">return</code> <code class="py color1">False</code></div>
+<div class="line number12 index11 alt1"><code class="py spaces">    </code><code class="py keyword">else</code><code class="py plain">:</code></div>
+<div class="line number13 index12 alt2"><code class="py spaces">        </code><code class="py keyword">return</code> <code class="py color1">True</code></div>
+<div class="line number14 index13 alt1"><code class="py spaces">        </code> </div>
+<div class="line number15 index14 alt2"><code class="py plain">with </code><code class="py functions">open</code><code class="py plain">(</code><code class="py string">"stage3_2b.txt"</code><code class="py plain">) as fh:</code></div>
+<div class="line number16 index15 alt1"><code class="py spaces">    </code><code class="py comments"># readlines will read into the whole line and put into list format</code></div>
+<div class="line number17 index16 alt2"><code class="py spaces">    </code><code class="py comments"># has \n at the end of each line</code></div>
+<div class="line number18 index17 alt1"><code class="py spaces">    </code><code class="py plain">data </code><code class="py keyword">=</code> <code class="py plain">fh.readlines()</code></div>
+<div class="line number19 index18 alt2"><code class="py comments">#print(len(data))</code></div>
+<div class="line number20 index19 alt1"><code class="py comments"># big group list</code></div>
+<div class="line number21 index20 alt2"><code class="py plain">bgroup </code><code class="py keyword">=</code> <code class="py plain">[]</code></div>
+<div class="line number22 index21 alt1"><code class="py comments"># count from the second group member</code></div>
+<div class="line number23 index22 alt2"><code class="py plain">sgroup </code><code class="py keyword">=</code> <code class="py plain">[]</code></div>
+<div class="line number24 index23 alt1"><code class="py keyword">for</code> <code class="py plain">i </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py functions">len</code><code class="py plain">(data)):</code></div>
+<div class="line number25 index24 alt2"><code class="py spaces">    </code><code class="py plain">group </code><code class="py keyword">=</code> <code class="py plain">data[i].rstrip(</code><code class="py string">"\n"</code><code class="py plain">).split(</code><code class="py string">"\t"</code><code class="py plain">)</code></div>
+<div class="line number26 index25 alt1"><code class="py spaces">    </code><code class="py comments">#print(group)</code></div>
+<div class="line number27 index26 alt2"><code class="py spaces">    </code><code class="py comments"># use mem to count the total number of each group</code></div>
+<div class="line number28 index27 alt1"><code class="py spaces">    </code><code class="py plain">mem </code><code class="py keyword">=</code> <code class="py value">0</code></div>
+<div class="line number29 index28 alt2"><code class="py spaces">    </code><code class="py comments"># final group data</code></div>
+<div class="line number30 index29 alt1"><code class="py spaces">    </code><code class="py plain">fgroup </code><code class="py keyword">=</code> <code class="py plain">[]</code></div>
+<div class="line number31 index30 alt2"><code class="py spaces">    </code><code class="py comments"># count from the second group member, eliminate the first element</code></div>
+<div class="line number32 index31 alt1"><code class="py spaces">    </code><code class="py plain">sgroup </code><code class="py keyword">=</code> <code class="py plain">group[</code><code class="py value">1</code><code class="py plain">:]</code></div>
+<div class="line number33 index32 alt2"><code class="py spaces">    </code><code class="py comments"># get only the odd index number</code></div>
+<div class="line number34 index33 alt1"><code class="py spaces">    </code><code class="py plain">igroup </code><code class="py keyword">=</code> <code class="py plain">[i </code><code class="py keyword">for</code> <code class="py plain">i </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py functions">len</code><code class="py plain">(sgroup)) </code><code class="py keyword">if</code> <code class="py plain">i </code><code class="py keyword">%</code> <code class="py value">2</code> <code class="py keyword">=</code><code class="py keyword">=</code> <code class="py value">1</code><code class="py plain">]</code></div>
+<div class="line number35 index34 alt2"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">j </code><code class="py keyword">in</code> <code class="py plain">igroup:</code></div>
+<div class="line number36 index35 alt1"><code class="py spaces">        </code><code class="py comments"># index starts from 0 which is j-1 when j=1</code></div>
+<div class="line number37 index36 alt2"><code class="py spaces">        </code><code class="py keyword">if</code> <code class="py plain">notVacant(sgroup[j</code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">]) </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py color1">True</code><code class="py plain">:</code></div>
+<div class="line number38 index37 alt1"><code class="py spaces">            </code><code class="py plain">mem </code><code class="py keyword">+</code><code class="py keyword">=</code> <code class="py value">1</code></div>
+<div class="line number39 index38 alt2"><code class="py spaces">            </code><code class="py plain">fgroup.append(sgroup[j</code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">])</code></div>
+<div class="line number40 index39 alt1"><code class="py spaces">    </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"group "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(i</code><code class="py keyword">+</code><code class="py value">1</code><code class="py plain">) </code><code class="py keyword">+</code> <code class="py string">":"</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(mem))</code></div>
+<div class="line number41 index40 alt2"><code class="py spaces">    </code><code class="py comments"># shuffle the fgroup list</code></div>
+<div class="line number42 index41 alt1"><code class="py spaces">    </code><code class="py plain">random.shuffle(fgroup)</code></div>
+<div class="line number43 index42 alt2"><code class="py spaces">    </code><code class="py comments"># draw num of member from final group list: fgroup</code></div>
+<div class="line number44 index43 alt1"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">k </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(num):</code></div>
+<div class="line number45 index44 alt2"><code class="py spaces">        </code><code class="py keyword">try</code><code class="py plain">:</code></div>
+<div class="line number46 index45 alt1"><code class="py spaces">            </code><code class="py functions">print</code><code class="py plain">(fgroup[k])</code></div>
+<div class="line number47 index46 alt2"><code class="py spaces">        </code><code class="py keyword">except</code><code class="py plain">:</code></div>
+<div class="line number48 index47 alt1"><code class="py spaces">            </code><code class="py comments"># num is greater than total number of this group</code></div>
+<div class="line number49 index48 alt2"><code class="py spaces">            </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"no such member"</code><code class="py plain">)</code></div>
+<div class="line number50 index49 alt1"><code class="py spaces">    </code><code class="py comments"># seperator</code></div>
+<div class="line number51 index50 alt2"><code class="py spaces">    </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"-"</code><code class="py keyword">*</code><code class="py value">20</code><code class="py plain">)</code></div>
+<div class="line number52 index51 alt1"><code class="py comments"># the following will use group data to generate needed html</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h4>以下為各分組倉儲, 分組網站與學員倉儲及學員網站連結:</h4>
+<p><strong>成果:</strong></p>
+<p><a href="http://github.com/40823245/stage3-bg1">stage3-bg1 repo</a><span><span> </span>|<span> </span></span><a href="http://40823251.github.io/stage3-bg1">stage3-bg1 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823245/cd2021">40823245 repo</a><span><span> </span>|<span> </span></span><a href="http://40823245.github.io/cd2021">40823245 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823251/cd2021">40823251 repo</a><span><span> </span>|<span> </span></span><a href="http://40823251.github.io/cd2021">40823251 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823208/cd2021">40823208 repo</a><span><span> </span>|<span> </span></span><a href="http://40823208.github.io/cd2021">40823208 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823213/cd2021">40823213 repo</a><span><span> </span>|<span> </span></span><a href="http://40823213.github.io/cd2021">40823213 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823232/cd2021">40823232 repo</a><span><span> </span>|<span> </span></span><a href="http://40823232.github.io/cd2021">40823232 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823234/cd2021">40823234 repo</a><span><span> </span>|<span> </span></span><a href="http://40823234.github.io/cd2021">40823234 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823235/cd2021">40823235 repo</a><span><span> </span>|<span> </span></span><a href="http://40823235.github.io/cd2021">40823235 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823246/cd2021">40823246 repo</a><span>|<span> </span></span><a href="http://40823246.github.io/cd2021">40823246 site</a><br/><span>----------</span><br/><a href="http://github.com/40823217/stage3-bg2">stage3-bg2 repo</a><span><span> </span>|<span> </span></span><a href="http://40823201.github.io/stage3-bg2">stage3-bg2 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823217/cd2021">40823217 repo</a><span><span> </span>|<span> </span></span><a href="http://40823217.github.io/cd2021">40823217 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823201/cd2021">40823201 repo</a><span><span> </span>|<span> </span></span><a href="http://40823201.github.io/cd2021">40823201 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823209/cd2021">40823209 repo</a><span><span> </span>|<span> </span></span><a href="http://40823209.github.io/cd2021">40823209 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823210/cd2021">40823210 repo</a><span><span> </span>|<span> </span></span><a href="http://40823210.github.io/cd2021">40823210 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823206/cd2021">40823206 repo</a><span><span> </span>|<span> </span></span><a href="http://40823206.github.io/cd2021">40823206 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823207/cd2021">40823207 repo</a><span><span> </span>|<span> </span></span><a href="http://40823207.github.io/cd2021">40823207 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823223/cd2021">40823223 repo</a><span><span> </span>|<span> </span></span><a href="http://40823223.github.io/cd2021">40823223 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823224/cd2021">40823224 repo</a><span>|<span> </span></span><a href="http://40823224.github.io/cd2021">40823224 site</a><br/><span>----------</span><br/><a href="http://github.com/40823236/stage3-bg3">stage3-bg3 repo</a><span><span> </span>|<span> </span></span><a href="http://40823202.github.io/stage3-bg3">stage3-bg3 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823236/cd2021">40823236 repo</a><span><span> </span>|<span> </span></span><a href="http://40823236.github.io/cd2021">40823236 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823202/cd2021">40823202 repo</a><span><span> </span>|<span> </span></span><a href="http://40823202.github.io/cd2021">40823202 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823203/cd2021">40823203 repo</a><span><span> </span>|<span> </span></span><a href="http://40823203.github.io/cd2021">40823203 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823212/cd2021">40823212 repo</a><span><span> </span>|<span> </span></span><a href="http://40823212.github.io/cd2021">40823212 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823219/cd2021">40823219 repo</a><span><span> </span>|<span> </span></span><a href="http://40823219.github.io/cd2021">40823219 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823222/cd2021">40823222 repo</a><span><span> </span>|<span> </span></span><a href="http://40823222.github.io/cd2021">40823222 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823231-2/cd2021">40823231-2 repo</a><span><span> </span>|<span> </span></span><a href="http://40823231-2.github.io/cd2021">40823231-2 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823244/cd2021">40823244 repo</a><span>|<span> </span></span><a href="http://40823244.github.io/cd2021">40823244 site</a><br/><span>----------</span><br/><a href="http://github.com/40823239/stage3-bg4">stage3-bg4 repo</a><span><span> </span>|<span> </span></span><a href="http://s40723140.github.io/stage3-bg4">stage3-bg4 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823239/cd2021">40823239 repo</a><span><span> </span>|<span> </span></span><a href="http://40823239.github.io/cd2021">40823239 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/s40723140/cd2021">s40723140 repo</a><span><span> </span>|<span> </span></span><a href="http://s40723140.github.io/cd2021">s40723140 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/s40723128/cd2021">s40723128 repo</a><span><span> </span>|<span> </span></span><a href="http://s40723128.github.io/cd2021">s40723128 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/s40723139/cd2021">s40723139 repo</a><span><span> </span>|<span> </span></span><a href="http://s40723139.github.io/cd2021">s40723139 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/s40723106/cd2021">s40723106 repo</a><span><span> </span>|<span> </span></span><a href="http://s40723106.github.io/cd2021">s40723106 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/s40723135/cd2021">s40723135 repo</a><span><span> </span>|<span> </span></span><a href="http://s40723135.github.io/cd2021">s40723135 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/s40723143/cd2021">s40723143 repo</a><span><span> </span>|<span> </span></span><a href="http://s40723143.github.io/cd2021">s40723143 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/s40723215/cd2021">s40723215 repo</a><span>|<span> </span></span><a href="http://s40723215.github.io/cd2021">s40723215 site</a><br/><span>----------</span><br/><a href="http://github.com/40823221/stage3-bg5">stage3-bg5 repo</a><span><span> </span>|<span> </span></span><a href="http://40823204.github.io/stage3-bg5">stage3-bg5 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823221/cd2021">40823221 repo</a><span><span> </span>|<span> </span></span><a href="http://40823221.github.io/cd2021">40823221 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823204/cd2021">40823204 repo</a><span><span> </span>|<span> </span></span><a href="http://40823204.github.io/cd2021">40823204 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823205/cd2021">40823205 repo</a><span><span> </span>|<span> </span></span><a href="http://40823205.github.io/cd2021">40823205 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823220/cd2021">40823220 repo</a><span><span> </span>|<span> </span></span><a href="http://40823220.github.io/cd2021">40823220 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823228/cd2021">40823228 repo</a><span><span> </span>|<span> </span></span><a href="http://40823228.github.io/cd2021">40823228 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823237/cd2021">40823237 repo</a><span><span> </span>|<span> </span></span><a href="http://40823237.github.io/cd2021">40823237 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823242/cd2021">40823242 repo</a><span><span> </span>|<span> </span></span><a href="http://40823242.github.io/cd2021">40823242 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823250/cd2021">40823250 repo</a><span>|<span> </span></span><a href="http://40823250.github.io/cd2021">40823250 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40832244/cd2021">40832244 repo</a><span>|<span> </span></span><a href="http://40832244.github.io/cd2021">40832244 site</a><br/><span>----------</span><br/><a href="http://github.com/40823225/stage3-bg6">stage3-bg6 repo</a><span><span> </span>|<span> </span></span><a href="http://40823214.github.io/stage3-bg6">stage3-bg6 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823225/cd2021">40823225 repo</a><span><span> </span>|<span> </span></span><a href="http://40823225.github.io/cd2021">40823225 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823214/cd2021">40823214 repo</a><span><span> </span>|<span> </span></span><a href="http://40823214.github.io/cd2021">40823214 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823218/cd2021">40823218 repo</a><span><span> </span>|<span> </span></span><a href="http://40823218.github.io/cd2021">40823218 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823211/cd2021">40823211 repo</a><span><span> </span>|<span> </span></span><a href="http://40823211.github.io/cd2021">40823211 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823248/cd2021">40823248 repo</a><span><span> </span>|<span> </span></span><a href="http://40823248.github.io/cd2021">40823248 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823247/cd2021">40823247 repo</a><span><span> </span>|<span> </span></span><a href="http://40823247.github.io/cd2021">40823247 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823216/cd2021">40823216 repo</a><span><span> </span>|<span> </span></span><a href="http://40823216.github.io/cd2021">40823216 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823238/cd2021">40823238 repo</a><span>|<span> </span></span><a href="http://40823238.github.io/cd2021">40823238 site</a><br/><span>----------</span><br/><a href="http://github.com/40623144/stage3-bg7">stage3-bg7 repo</a><span><span> </span>|<span> </span></span><a href="http://40823233.github.io/stage3-bg7">stage3-bg7 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40623144/cd2021">40623144 repo</a><span><span> </span>|<span> </span></span><a href="http://40623144.github.io/cd2021">40623144 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823233/cd2021">40823233 repo</a><span><span> </span>|<span> </span></span><a href="http://40823233.github.io/cd2021">40823233 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/s40723224/cd2021">s40723224 repo</a><span><span> </span>|<span> </span></span><a href="http://s40723224.github.io/cd2021">s40723224 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823241/cd2021">40823241 repo</a><span><span> </span>|<span> </span></span><a href="http://40823241.github.io/cd2021">40823241 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40423155/cd2021">40423155 repo</a><span><span> </span>|<span> </span></span><a href="http://40423155.github.io/cd2021">40423155 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/40823227/cd2021">40823227 repo</a><span><span> </span>|<span> </span></span><a href="http://40823227.github.io/cd2021">40823227 site</a><span><span> </span>|<span> </span></span><a href="http://github.com/s40723233/cd2021">s40723233 repo</a><span><span> </span>|<span> </span></span><a href="http://s40723233.github.io/cd2021">s40723233 site</a><br/><span>----------</span></p>
+<p>請各組員分別將個人在 stage1 與 stage2 所完成的 coppeliasim 場景, 採 Python remote API 進行操控, 並將過程拍成影片後, 放在個人與分組網站上.</p>
+<p>stage3 專案中的 CoppeliaSim 請一律使用<span> </span><a href="http://a.kmol.info:88/CoppeliaSimEdu_4.2.0.7z">4.2.0 版</a>.</p>
+<p>範例:<span> </span><a href="http://mde.tw/cad2020/content/CoppeliaSim.html">http://mde.tw/cad2020/content/CoppeliaSim.html</a></p>
+<h4>W10 範例:</h4>
+<p>各班上課時所分配到的內部 IP, 192.168.192.1+組別+排序別</p>
+<p>意即, 第五組排序別第一即為該組組長, 其 IP 為 192.168.192.151</p>
+<p>以<span> </span><a href="http://mde.tw/cad2020/downloads/coppeliasim/vrep_remoteapi_ex.7z">http://mde.tw/cad2020/downloads/coppeliasim/vrep_remoteapi_ex.7z</a><span> </span>為例, 每一個 Python3 remote api 程式執行需要<span> </span><a href="https://raw.githubusercontent.com/CoppeliaRobotics/remoteApiBindings/master/python/python/sim.py">sim.py</a>,<span> </span><a href="https://raw.githubusercontent.com/CoppeliaRobotics/remoteApiBindings/master/python/python/simConst.py">simConst.py</a><span> </span>與<span> </span><a href="https://github.com/CoppeliaRobotics/remoteApiBindings/tree/master/lib/lib/Windows">remoteApi.dll</a><span> </span>等三個檔案, 若針對 2w1a.ttt 場景, 以下列 Python 程式對位於 192.168.192.1 伺服器上的 CoppeliaSim 場景進行操控:</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_816560">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+<div class="line number21 index20 alt2">21</div>
+<div class="line number22 index21 alt1">22</div>
+<div class="line number23 index22 alt2">23</div>
+<div class="line number24 index23 alt1">24</div>
+<div class="line number25 index24 alt2">25</div>
+<div class="line number26 index25 alt1">26</div>
+<div class="line number27 index26 alt2">27</div>
+<div class="line number28 index27 alt1">28</div>
+<div class="line number29 index28 alt2">29</div>
+<div class="line number30 index29 alt1">30</div>
+<div class="line number31 index30 alt2">31</div>
+<div class="line number32 index31 alt1">32</div>
+<div class="line number33 index32 alt2">33</div>
+<div class="line number34 index33 alt1">34</div>
+<div class="line number35 index34 alt2">35</div>
+<div class="line number36 index35 alt1">36</div>
+<div class="line number37 index36 alt2">37</div>
+<div class="line number38 index37 alt1">38</div>
+<div class="line number39 index38 alt2">39</div>
+<div class="line number40 index39 alt1">40</div>
+<div class="line number41 index40 alt2">41</div>
+<div class="line number42 index41 alt1">42</div>
+<div class="line number43 index42 alt2">43</div>
+<div class="line number44 index43 alt1">44</div>
+<div class="line number45 index44 alt2">45</div>
+<div class="line number46 index45 alt1">46</div>
+<div class="line number47 index46 alt2">47</div>
+<div class="line number48 index47 alt1">48</div>
+<div class="line number49 index48 alt2">49</div>
+<div class="line number50 index49 alt1">50</div>
+<div class="line number51 index50 alt2">51</div>
+<div class="line number52 index51 alt1">52</div>
+<div class="line number53 index52 alt2">53</div>
+<div class="line number54 index53 alt1">54</div>
+<div class="line number55 index54 alt2">55</div>
+<div class="line number56 index55 alt1">56</div>
+<div class="line number57 index56 alt2">57</div>
+<div class="line number58 index57 alt1">58</div>
+<div class="line number59 index58 alt2">59</div>
+<div class="line number60 index59 alt1">60</div>
+<div class="line number61 index60 alt2">61</div>
+<div class="line number62 index61 alt1">62</div>
+<div class="line number63 index62 alt2">63</div>
+<div class="line number64 index63 alt1">64</div>
+<div class="line number65 index64 alt2">65</div>
+<div class="line number66 index65 alt1">66</div>
+<div class="line number67 index66 alt2">67</div>
+<div class="line number68 index67 alt1">68</div>
+<div class="line number69 index68 alt2">69</div>
+<div class="line number70 index69 alt1">70</div>
+<div class="line number71 index70 alt2">71</div>
+<div class="line number72 index71 alt1">72</div>
+<div class="line number73 index72 alt2">73</div>
+<div class="line number74 index73 alt1">74</div>
+<div class="line number75 index74 alt2">75</div>
+<div class="line number76 index75 alt1">76</div>
+<div class="line number77 index76 alt2">77</div>
+<div class="line number78 index77 alt1">78</div>
+<div class="line number79 index78 alt2">79</div>
+<div class="line number80 index79 alt1">80</div>
+<div class="line number81 index80 alt2">81</div>
+<div class="line number82 index81 alt1">82</div>
+<div class="line number83 index82 alt2">83</div>
+<div class="line number84 index83 alt1">84</div>
+<div class="line number85 index84 alt2">85</div>
+<div class="line number86 index85 alt1">86</div>
+<div class="line number87 index86 alt2">87</div>
+<div class="line number88 index87 alt1">88</div>
+<div class="line number89 index88 alt2">89</div>
+<div class="line number90 index89 alt1">90</div>
+<div class="line number91 index90 alt2">91</div>
+<div class="line number92 index91 alt1">92</div>
+<div class="line number93 index92 alt2">93</div>
+<div class="line number94 index93 alt1">94</div>
+<div class="line number95 index94 alt2">95</div>
+<div class="line number96 index95 alt1">96</div>
+<div class="line number97 index96 alt2">97</div>
+<div class="line number98 index97 alt1">98</div>
+<div class="line number99 index98 alt2">99</div>
+<div class="line number100 index99 alt1">100</div>
+<div class="line number101 index100 alt2">101</div>
+<div class="line number102 index101 alt1">102</div>
+<div class="line number103 index102 alt2">103</div>
+<div class="line number104 index103 alt1">104</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">sim as vrep</code></div>
+<div class="line number2 index1 alt1"><code class="py keyword">import</code> <code class="py plain">math</code></div>
+<div class="line number3 index2 alt2"><code class="py keyword">import</code> <code class="py plain">random</code></div>
+<div class="line number4 index3 alt1"><code class="py keyword">import</code> <code class="py plain">time</code></div>
+<div class="line number5 index4 alt2"> </div>
+<div class="line number6 index5 alt1"><code class="py functions">print</code> <code class="py plain">(</code><code class="py string">'Start'</code><code class="py plain">)</code></div>
+<div class="line number7 index6 alt2"> </div>
+<div class="line number8 index7 alt1"><code class="py comments"># Close eventual old connections</code></div>
+<div class="line number9 index8 alt2"><code class="py plain">vrep.simxFinish(</code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">)</code></div>
+<div class="line number10 index9 alt1"><code class="py comments"># Connect to V-REP remote server</code></div>
+<div class="line number11 index10 alt2"><code class="py plain">clientID </code><code class="py keyword">=</code> <code class="py plain">vrep.simxStart(</code><code class="py string">'192.168.192.1'</code><code class="py plain">, </code><code class="py value">19997</code><code class="py plain">, </code><code class="py color1">True</code><code class="py plain">, </code><code class="py color1">True</code><code class="py plain">, </code><code class="py value">5000</code><code class="py plain">, </code><code class="py value">5</code><code class="py plain">)</code></div>
+<div class="line number12 index11 alt1"> </div>
+<div class="line number13 index12 alt2"><code class="py keyword">if</code> <code class="py plain">clientID !</code><code class="py keyword">=</code> <code class="py keyword">-</code><code class="py value">1</code><code class="py plain">:</code></div>
+<div class="line number14 index13 alt1"><code class="py spaces">    </code><code class="py functions">print</code> <code class="py plain">(</code><code class="py string">'Connected to remote API server'</code><code class="py plain">)</code></div>
+<div class="line number15 index14 alt2"> </div>
+<div class="line number16 index15 alt1"><code class="py spaces">    </code><code class="py plain">res </code><code class="py keyword">=</code> <code class="py plain">vrep.simxAddStatusbarMessage(</code></div>
+<div class="line number17 index16 alt2"><code class="py spaces">        </code><code class="py plain">clientID, </code><code class="py string">"teacher"</code><code class="py plain">,</code></div>
+<div class="line number18 index17 alt1"><code class="py spaces">        </code><code class="py plain">vrep.simx_opmode_oneshot)</code></div>
+<div class="line number19 index18 alt2"><code class="py spaces">    </code><code class="py keyword">if</code> <code class="py plain">res </code><code class="py keyword">not</code> <code class="py keyword">in</code> <code class="py plain">(vrep.simx_return_ok, vrep.simx_return_novalue_flag):</code></div>
+<div class="line number20 index19 alt1"><code class="py spaces">        </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"Could not add a message to the status bar."</code><code class="py plain">)</code></div>
+<div class="line number21 index20 alt2"><code class="py spaces">    </code><code class="py comments"># Communication operating mode with the remote API : wait for its answer before continuing (blocking mode)</code></div>
+<div class="line number22 index21 alt1"><code class="py spaces">    </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiConstants.htm</code></div>
+<div class="line number23 index22 alt2"><code class="py spaces">    </code><code class="py plain">opmode </code><code class="py keyword">=</code> <code class="py plain">vrep.simx_opmode_oneshot_wait</code></div>
+<div class="line number24 index23 alt1"> </div>
+<div class="line number25 index24 alt2"><code class="py spaces">    </code><code class="py comments"># Try to retrieve motors and robot handlers</code></div>
+<div class="line number26 index25 alt1"><code class="py spaces">    </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxGetObjectHandle</code></div>
+<div class="line number27 index26 alt2"><code class="py spaces">    </code><code class="py plain">ret1, wristHandle </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectHandle(clientID, </code><code class="py string">"WristMotor"</code><code class="py plain">, opmode)</code></div>
+<div class="line number28 index27 alt1"><code class="py spaces">    </code><code class="py plain">ret2, elbowHandle </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectHandle(clientID, </code><code class="py string">"ElbowMotor"</code><code class="py plain">, opmode)</code></div>
+<div class="line number29 index28 alt2"><code class="py spaces">    </code><code class="py plain">ret3, shoulderHandle </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectHandle(clientID, </code><code class="py string">"ShoulderMotor"</code><code class="py plain">, opmode)</code></div>
+<div class="line number30 index29 alt1"><code class="py spaces">    </code><code class="py plain">ret4, robotHandle </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectHandle(clientID, </code><code class="py string">"2W1A"</code><code class="py plain">, opmode)</code></div>
+<div class="line number31 index30 alt2"> </div>
+<div class="line number32 index31 alt1"><code class="py spaces">    </code><code class="py comments"># If handlers are OK, execute three random simulations</code></div>
+<div class="line number33 index32 alt2"><code class="py spaces">    </code><code class="py keyword">if</code> <code class="py plain">ret1 </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py value">0</code> <code class="py keyword">and</code> <code class="py plain">ret2 </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py value">0</code> <code class="py keyword">and</code> <code class="py plain">ret3 </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py value">0</code><code class="py plain">:</code></div>
+<div class="line number34 index33 alt1"><code class="py spaces">        </code><code class="py plain">random.seed()</code></div>
+<div class="line number35 index34 alt2"><code class="py spaces">        </code><code class="py keyword">for</code> <code class="py plain">i </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">3</code><code class="py plain">):</code></div>
+<div class="line number36 index35 alt1"><code class="py spaces">            </code><code class="py comments"># Start the simulation</code></div>
+<div class="line number37 index36 alt2"><code class="py spaces">            </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxStartSimulation</code></div>
+<div class="line number38 index37 alt1"><code class="py spaces">            </code><code class="py plain">vrep.simxStartSimulation(clientID, opmode)</code></div>
+<div class="line number39 index38 alt2"><code class="py spaces">            </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"----- Simulation started -----"</code><code class="py plain">)</code></div>
+<div class="line number40 index39 alt1"> </div>
+<div class="line number41 index40 alt2"><code class="py spaces">            </code><code class="py comments"># Start getting the robot position</code></div>
+<div class="line number42 index41 alt1"><code class="py spaces">            </code><code class="py comments"># Unlike other commands, we will use a streaming operating mode</code></div>
+<div class="line number43 index42 alt2"><code class="py spaces">            </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxGetObjectPosition</code></div>
+<div class="line number44 index43 alt1"><code class="py spaces">            </code><code class="py plain">pret, robotPos </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectPosition(clientID, robotHandle, </code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">, vrep.simx_opmode_streaming)</code></div>
+<div class="line number45 index44 alt2"><code class="py spaces">            </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"2w1a position: (x = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotPos[</code><code class="py value">0</code><code class="py plain">]) </code><code class="py keyword">+</code><code class="py plain">\</code></div>
+<div class="line number46 index45 alt1"><code class="py spaces">                  </code><code class="py string">", y = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotPos[</code><code class="py value">1</code><code class="py plain">]) </code><code class="py keyword">+</code> <code class="py string">")"</code><code class="py plain">)</code></div>
+<div class="line number47 index46 alt2"> </div>
+<div class="line number48 index47 alt1"><code class="py spaces">            </code><code class="py comments"># Start getting the robot orientation</code></div>
+<div class="line number49 index48 alt2"><code class="py spaces">            </code><code class="py comments"># Unlike other commands, we will use a streaming operating mode</code></div>
+<div class="line number50 index49 alt1"><code class="py spaces">            </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxGetObjectOrientation</code></div>
+<div class="line number51 index50 alt2"><code class="py spaces">            </code><code class="py plain">oret, robotOrient </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectOrientation(clientID, robotHandle, </code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">, vrep.simx_opmode_streaming)</code></div>
+<div class="line number52 index51 alt1"><code class="py spaces">            </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"2w1a orientation: (x = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotOrient[</code><code class="py value">0</code><code class="py plain">]) </code><code class="py keyword">+</code> <code class="py plain">\</code></div>
+<div class="line number53 index52 alt2"><code class="py spaces">                  </code><code class="py string">", y = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotOrient[</code><code class="py value">1</code><code class="py plain">]) </code><code class="py keyword">+</code><code class="py plain">\</code></div>
+<div class="line number54 index53 alt1"><code class="py spaces">                  </code><code class="py string">", z = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotOrient[</code><code class="py value">2</code><code class="py plain">]) </code><code class="py keyword">+</code> <code class="py string">")"</code><code class="py plain">)</code></div>
+<div class="line number55 index54 alt2"> </div>
+<div class="line number56 index55 alt1"><code class="py spaces">            </code><code class="py comments"># Make the robot move randomly five times</code></div>
+<div class="line number57 index56 alt2"><code class="py spaces">            </code><code class="py keyword">for</code> <code class="py plain">j </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">5</code><code class="py plain">):</code></div>
+<div class="line number58 index57 alt1"><code class="py spaces">                </code><code class="py comments"># Generating random positions for the motors</code></div>
+<div class="line number59 index58 alt2"><code class="py spaces">                </code><code class="py plain">awrist </code><code class="py keyword">=</code> <code class="py plain">random.randint(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">300</code><code class="py plain">)</code></div>
+<div class="line number60 index59 alt1"><code class="py spaces">                </code><code class="py plain">aelbow </code><code class="py keyword">=</code> <code class="py plain">random.randint(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">300</code><code class="py plain">)</code></div>
+<div class="line number61 index60 alt2"><code class="py spaces">                </code><code class="py plain">ashoulder </code><code class="py keyword">=</code> <code class="py plain">random.randint(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">300</code><code class="py plain">)</code></div>
+<div class="line number62 index61 alt1"> </div>
+<div class="line number63 index62 alt2"><code class="py spaces">                </code><code class="py comments"># The control functions use Radians to determine the target position.</code></div>
+<div class="line number64 index63 alt1"><code class="py spaces">                </code><code class="py comments"># Here, we use maths.radians to convert degrees into radians.</code></div>
+<div class="line number65 index64 alt2"><code class="py spaces">                </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxSetJointTargetPosition</code></div>
+<div class="line number66 index65 alt1"><code class="py spaces">                </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"Motors target positions: "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(ashoulder) </code><code class="py keyword">+</code> <code class="py string">" "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(aelbow) </code><code class="py keyword">+</code> <code class="py string">" "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(awrist))</code></div>
+<div class="line number67 index66 alt2"><code class="py spaces">                </code><code class="py plain">vrep.simxSetJointTargetPosition(clientID, wristHandle, math.radians(awrist), opmode)</code></div>
+<div class="line number68 index67 alt1"><code class="py spaces">                </code><code class="py plain">vrep.simxSetJointTargetPosition(clientID, elbowHandle, math.radians(aelbow), opmode)</code></div>
+<div class="line number69 index68 alt2"><code class="py spaces">                </code><code class="py plain">vrep.simxSetJointTargetPosition(clientID, shoulderHandle, math.radians(ashoulder), opmode)</code></div>
+<div class="line number70 index69 alt1"> </div>
+<div class="line number71 index70 alt2"><code class="py spaces">                </code><code class="py comments"># Wait in order to let the motors finish their movements</code></div>
+<div class="line number72 index71 alt1"><code class="py spaces">                </code><code class="py comments"># Tip: there must be a more efficient way to do it...</code></div>
+<div class="line number73 index72 alt2"><code class="py spaces">                </code><code class="py plain">time.sleep(</code><code class="py value">5</code><code class="py plain">)</code></div>
+<div class="line number74 index73 alt1"> </div>
+<div class="line number75 index74 alt2"><code class="py spaces">                </code><code class="py comments"># Get the motors effective positions after the movement sequence</code></div>
+<div class="line number76 index75 alt1"><code class="py spaces">                </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxGetJointPosition</code></div>
+<div class="line number77 index76 alt2"><code class="py spaces">                </code><code class="py plain">pwrist </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetJointPosition(clientID, wristHandle, opmode)</code></div>
+<div class="line number78 index77 alt1"><code class="py spaces">                </code><code class="py plain">pelbow </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetJointPosition(clientID, elbowHandle, opmode)</code></div>
+<div class="line number79 index78 alt2"><code class="py spaces">                </code><code class="py plain">pshoulder </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetJointPosition(clientID, shoulderHandle, opmode)</code></div>
+<div class="line number80 index79 alt1"><code class="py spaces">                </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"Motors reached positions: "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(ashoulder) </code><code class="py keyword">+</code> <code class="py string">" "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(aelbow) </code><code class="py keyword">+</code> <code class="py string">" "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(awrist))</code></div>
+<div class="line number81 index80 alt2"> </div>
+<div class="line number82 index81 alt1"><code class="py spaces">                </code><code class="py comments"># Get the robot position after the movement sequence</code></div>
+<div class="line number83 index82 alt2"><code class="py spaces">                </code><code class="py plain">pret, robotPos </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectPosition(clientID, robotHandle, </code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">, vrep.simx_opmode_buffer)</code></div>
+<div class="line number84 index83 alt1"><code class="py spaces">                </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"2w1a position: (x = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotPos[</code><code class="py value">0</code><code class="py plain">]) </code><code class="py keyword">+</code><code class="py plain">\</code></div>
+<div class="line number85 index84 alt2"><code class="py spaces">                      </code><code class="py string">", y = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotPos[</code><code class="py value">1</code><code class="py plain">]) </code><code class="py keyword">+</code> <code class="py string">")"</code><code class="py plain">)</code></div>
+<div class="line number86 index85 alt1"> </div>
+<div class="line number87 index86 alt2"><code class="py spaces">                </code><code class="py comments"># Get the robot orientation after the movement sequence</code></div>
+<div class="line number88 index87 alt1"><code class="py spaces">                </code><code class="py plain">oret, robotOrient </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectOrientation(clientID, robotHandle, </code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">, vrep.simx_opmode_buffer)</code></div>
+<div class="line number89 index88 alt2"><code class="py spaces">                </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"2w1a orientation: (x = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotOrient[</code><code class="py value">0</code><code class="py plain">]) </code><code class="py keyword">+</code><code class="py plain">\</code></div>
+<div class="line number90 index89 alt1"><code class="py spaces">                      </code><code class="py string">", y = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotOrient[</code><code class="py value">1</code><code class="py plain">]) </code><code class="py keyword">+</code><code class="py plain">\</code></div>
+<div class="line number91 index90 alt2"><code class="py spaces">                      </code><code class="py string">", z = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotOrient[</code><code class="py value">2</code><code class="py plain">]) </code><code class="py keyword">+</code> <code class="py string">")"</code><code class="py plain">)</code></div>
+<div class="line number92 index91 alt1"> </div>
+<div class="line number93 index92 alt2"><code class="py spaces">            </code><code class="py comments"># End the simulation, wait to be sure V-REP had the time to stop it entirely</code></div>
+<div class="line number94 index93 alt1"><code class="py spaces">            </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxStopSimulation</code></div>
+<div class="line number95 index94 alt2"><code class="py spaces">            </code><code class="py plain">vrep.simxStopSimulation(clientID, opmode)</code></div>
+<div class="line number96 index95 alt1"><code class="py spaces">            </code><code class="py plain">time.sleep(</code><code class="py value">1</code><code class="py plain">)</code></div>
+<div class="line number97 index96 alt2"><code class="py spaces">            </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"----- Simulation ended -----"</code><code class="py plain">)</code></div>
+<div class="line number98 index97 alt1"> </div>
+<div class="line number99 index98 alt2"><code class="py spaces">    </code><code class="py comments"># Close the connection to V-REP remote server</code></div>
+<div class="line number100 index99 alt1"><code class="py spaces">    </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxFinish</code></div>
+<div class="line number101 index100 alt2"><code class="py spaces">    </code><code class="py plain">vrep.simxFinish(clientID)</code></div>
+<div class="line number102 index101 alt1"><code class="py keyword">else</code><code class="py plain">:</code></div>
+<div class="line number103 index102 alt2"><code class="py spaces">    </code><code class="py functions">print</code> <code class="py plain">(</code><code class="py string">'Failed connecting to remote API server'</code><code class="py plain">)</code></div>
+<div class="line number104 index103 alt1"><code class="py functions">print</code> <code class="py plain">(</code><code class="py string">'End'</code><code class="py plain">)</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h4>CoppeliaSim 場景 remote API 協同監控流程:</h4>
+<ol>
+<li>各組員下載<span> </span><a href="https://portableapps.com/apps/music_video/obs-studio-portable">https://portableapps.com/apps/music_video/obs-studio-portable</a></li>
+<li>擔任 CoppliaSim 場景直播者時, 必須以 @gm 帳號登入 Youtube 後, 啟動 Live stream 取得直播串流金鑰, 將金鑰輸入 OBS 後, 擷取電腦顯示器啟動串流, 然後利用 copy video url 取得直播網址.</li>
+<li>將直播網誌公布在<span> </span><a href="https://gitter.im/mdecourse/cd2021">https://gitter.im/mdecourse/cd2021</a>, 並附上伺服器 IPv4 內部網路 IP 位址與場景開放埠號.</li>
+<li>直播者同時必須在個人網站上公布 Python remote API 操控直播場景相關參變數以及監控條件.</li>
+<li>待遠端各協同操控學員準備就緒後, 完成操控流程後將所錄製的影片嵌入個人與分組網站中.</li>
+</ol>
+<h3>task 3</h3>
+<h3>W11</h3>
+<h3>W12</h3>
+<h3>W13</h3>
+<h3>W14</h3>
+<h3>W15</h3>
+<p></p>
 <h1>Develop</h1>
 <p><a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 的開發, 可以在一個目錄中放入 cmsimde, 然後將 up_dir 中的內容放到與 cmsimde 目錄同位階的地方, 使用 command 進入 cmsimde 目錄, 執行 python wsgi.py, 就可以啟動, 以瀏覽器 https://localhost:9443 就可以連接, 以 admin 作為管理者密碼, 就可以登入維護內容.</p>
 <p>cmsimde 的開發採用 Leo Editor, 開啟 cmsimde 目錄中的 cmsimde.leo 就可以進行程式修改, 結束後, 若要保留網際內容, 只要將 cmsimde 外部的內容倒回 up_dir 目錄中即可後續對 cmsimde 遠端倉儲進行改版.</p>
 <p>init.py 位於  up_dir 目錄, 可以設定 site_title 與 uwsgi 等變數.</p>
+<div id="gtx-trans" style="position: absolute; left: -13px; top: 10676.9px;">
+<div class="gtx-trans-icon"></div>
+</div>

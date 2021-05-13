@@ -1,0 +1,426 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>CMSiMDE</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>40723233</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">40723233</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='WORKS.html'>WORKS</a><ul class='dropdown'><li class='has-children'><a href='stage 1.html'>stage 1</a><ul class='dropdown'><li><a href='W1.html'>W1</a><li><a href='W2~W3.html'>W2~W3</a><li><a href='W4.html'>W4</a><li><a href='W5.html'>W5</a></li></ul><li class='has-children'><a href='stage 2.html'>stage 2</a><ul class='dropdown'><li><a href='W6.html'>W6</a><li><a href='W7.html'>W7</a><li><a href='W8.html'>W8</a><li><a href='W9.html'>W9</a></li></ul><li class='has-children'><a href='stage 3.html'>stage 3</a><ul class='dropdown'><li><a href='W10.html'>W10</a><li><a href='task 1.html'>task 1</a><li><a href='task 2.html'>task 2</a><li><a href='task 3.html'>task 3</a><li><a href='W11.html'>W11</a><li><a href='W12.html'>W12</a><li><a href='W13.html'>W13</a><li><a href='W14.html'>W14</a><li><a href='W15.html'>W15</a></li></li></ul></ul><li><a href='Develop.html'>Develop</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">task 1 << <a href='task 1.html'>Previous</a> <a href='task 3.html'>Next</a> >> task 3<br /><h1>task 2</h1>
+<p>請各組員分別將個人在 stage1 與 stage2 所完成的 coppeliasim 場景, 採 Python remote API 進行操控, 並將過程拍成影片後, 放在個人與分組網站上.</p>
+<p>stage3 專案中的 CoppeliaSim 請一律使用<span> </span><a href="http://a.kmol.info:88/CoppeliaSimEdu_4.2.0.7z">4.2.0 版</a>.</p>
+<p>範例:<span> </span><a href="http://mde.tw/cad2020/content/CoppeliaSim.html">http://mde.tw/cad2020/content/CoppeliaSim.html</a></p>
+<h4>W10 範例:</h4>
+<p>各班上課時所分配到的內部 IP, 192.168.192.1+組別+排序別</p>
+<p>意即, 第五組排序別第一即為該組組長, 其 IP 為 192.168.192.151</p>
+<p>以<span> </span><a href="http://mde.tw/cad2020/downloads/coppeliasim/vrep_remoteapi_ex.7z">http://mde.tw/cad2020/downloads/coppeliasim/vrep_remoteapi_ex.7z</a><span> </span>為例, 每一個 Python3 remote api 程式執行需要<span> </span><a href="https://raw.githubusercontent.com/CoppeliaRobotics/remoteApiBindings/master/python/python/sim.py">sim.py</a>,<span> </span><a href="https://raw.githubusercontent.com/CoppeliaRobotics/remoteApiBindings/master/python/python/simConst.py">simConst.py</a><span> </span>與<span> </span><a href="https://github.com/CoppeliaRobotics/remoteApiBindings/tree/master/lib/lib/Windows">remoteApi.dll</a><span> </span>等三個檔案, 若針對 2w1a.ttt 場景, 以下列 Python 程式對位於 192.168.192.1 伺服器上的 CoppeliaSim 場景進行操控:</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_816560">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+<div class="line number21 index20 alt2">21</div>
+<div class="line number22 index21 alt1">22</div>
+<div class="line number23 index22 alt2">23</div>
+<div class="line number24 index23 alt1">24</div>
+<div class="line number25 index24 alt2">25</div>
+<div class="line number26 index25 alt1">26</div>
+<div class="line number27 index26 alt2">27</div>
+<div class="line number28 index27 alt1">28</div>
+<div class="line number29 index28 alt2">29</div>
+<div class="line number30 index29 alt1">30</div>
+<div class="line number31 index30 alt2">31</div>
+<div class="line number32 index31 alt1">32</div>
+<div class="line number33 index32 alt2">33</div>
+<div class="line number34 index33 alt1">34</div>
+<div class="line number35 index34 alt2">35</div>
+<div class="line number36 index35 alt1">36</div>
+<div class="line number37 index36 alt2">37</div>
+<div class="line number38 index37 alt1">38</div>
+<div class="line number39 index38 alt2">39</div>
+<div class="line number40 index39 alt1">40</div>
+<div class="line number41 index40 alt2">41</div>
+<div class="line number42 index41 alt1">42</div>
+<div class="line number43 index42 alt2">43</div>
+<div class="line number44 index43 alt1">44</div>
+<div class="line number45 index44 alt2">45</div>
+<div class="line number46 index45 alt1">46</div>
+<div class="line number47 index46 alt2">47</div>
+<div class="line number48 index47 alt1">48</div>
+<div class="line number49 index48 alt2">49</div>
+<div class="line number50 index49 alt1">50</div>
+<div class="line number51 index50 alt2">51</div>
+<div class="line number52 index51 alt1">52</div>
+<div class="line number53 index52 alt2">53</div>
+<div class="line number54 index53 alt1">54</div>
+<div class="line number55 index54 alt2">55</div>
+<div class="line number56 index55 alt1">56</div>
+<div class="line number57 index56 alt2">57</div>
+<div class="line number58 index57 alt1">58</div>
+<div class="line number59 index58 alt2">59</div>
+<div class="line number60 index59 alt1">60</div>
+<div class="line number61 index60 alt2">61</div>
+<div class="line number62 index61 alt1">62</div>
+<div class="line number63 index62 alt2">63</div>
+<div class="line number64 index63 alt1">64</div>
+<div class="line number65 index64 alt2">65</div>
+<div class="line number66 index65 alt1">66</div>
+<div class="line number67 index66 alt2">67</div>
+<div class="line number68 index67 alt1">68</div>
+<div class="line number69 index68 alt2">69</div>
+<div class="line number70 index69 alt1">70</div>
+<div class="line number71 index70 alt2">71</div>
+<div class="line number72 index71 alt1">72</div>
+<div class="line number73 index72 alt2">73</div>
+<div class="line number74 index73 alt1">74</div>
+<div class="line number75 index74 alt2">75</div>
+<div class="line number76 index75 alt1">76</div>
+<div class="line number77 index76 alt2">77</div>
+<div class="line number78 index77 alt1">78</div>
+<div class="line number79 index78 alt2">79</div>
+<div class="line number80 index79 alt1">80</div>
+<div class="line number81 index80 alt2">81</div>
+<div class="line number82 index81 alt1">82</div>
+<div class="line number83 index82 alt2">83</div>
+<div class="line number84 index83 alt1">84</div>
+<div class="line number85 index84 alt2">85</div>
+<div class="line number86 index85 alt1">86</div>
+<div class="line number87 index86 alt2">87</div>
+<div class="line number88 index87 alt1">88</div>
+<div class="line number89 index88 alt2">89</div>
+<div class="line number90 index89 alt1">90</div>
+<div class="line number91 index90 alt2">91</div>
+<div class="line number92 index91 alt1">92</div>
+<div class="line number93 index92 alt2">93</div>
+<div class="line number94 index93 alt1">94</div>
+<div class="line number95 index94 alt2">95</div>
+<div class="line number96 index95 alt1">96</div>
+<div class="line number97 index96 alt2">97</div>
+<div class="line number98 index97 alt1">98</div>
+<div class="line number99 index98 alt2">99</div>
+<div class="line number100 index99 alt1">100</div>
+<div class="line number101 index100 alt2">101</div>
+<div class="line number102 index101 alt1">102</div>
+<div class="line number103 index102 alt2">103</div>
+<div class="line number104 index103 alt1">104</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">sim as vrep</code></div>
+<div class="line number2 index1 alt1"><code class="py keyword">import</code> <code class="py plain">math</code></div>
+<div class="line number3 index2 alt2"><code class="py keyword">import</code> <code class="py plain">random</code></div>
+<div class="line number4 index3 alt1"><code class="py keyword">import</code> <code class="py plain">time</code></div>
+<div class="line number5 index4 alt2"> </div>
+<div class="line number6 index5 alt1"><code class="py functions">print</code> <code class="py plain">(</code><code class="py string">'Start'</code><code class="py plain">)</code></div>
+<div class="line number7 index6 alt2"> </div>
+<div class="line number8 index7 alt1"><code class="py comments"># Close eventual old connections</code></div>
+<div class="line number9 index8 alt2"><code class="py plain">vrep.simxFinish(</code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">)</code></div>
+<div class="line number10 index9 alt1"><code class="py comments"># Connect to V-REP remote server</code></div>
+<div class="line number11 index10 alt2"><code class="py plain">clientID </code><code class="py keyword">=</code> <code class="py plain">vrep.simxStart(</code><code class="py string">'192.168.192.1'</code><code class="py plain">, </code><code class="py value">19997</code><code class="py plain">, </code><code class="py color1">True</code><code class="py plain">, </code><code class="py color1">True</code><code class="py plain">, </code><code class="py value">5000</code><code class="py plain">, </code><code class="py value">5</code><code class="py plain">)</code></div>
+<div class="line number12 index11 alt1"> </div>
+<div class="line number13 index12 alt2"><code class="py keyword">if</code> <code class="py plain">clientID !</code><code class="py keyword">=</code> <code class="py keyword">-</code><code class="py value">1</code><code class="py plain">:</code></div>
+<div class="line number14 index13 alt1"><code class="py spaces">    </code><code class="py functions">print</code> <code class="py plain">(</code><code class="py string">'Connected to remote API server'</code><code class="py plain">)</code></div>
+<div class="line number15 index14 alt2"> </div>
+<div class="line number16 index15 alt1"><code class="py spaces">    </code><code class="py plain">res </code><code class="py keyword">=</code> <code class="py plain">vrep.simxAddStatusbarMessage(</code></div>
+<div class="line number17 index16 alt2"><code class="py spaces">        </code><code class="py plain">clientID, </code><code class="py string">"teacher"</code><code class="py plain">,</code></div>
+<div class="line number18 index17 alt1"><code class="py spaces">        </code><code class="py plain">vrep.simx_opmode_oneshot)</code></div>
+<div class="line number19 index18 alt2"><code class="py spaces">    </code><code class="py keyword">if</code> <code class="py plain">res </code><code class="py keyword">not</code> <code class="py keyword">in</code> <code class="py plain">(vrep.simx_return_ok, vrep.simx_return_novalue_flag):</code></div>
+<div class="line number20 index19 alt1"><code class="py spaces">        </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"Could not add a message to the status bar."</code><code class="py plain">)</code></div>
+<div class="line number21 index20 alt2"><code class="py spaces">    </code><code class="py comments"># Communication operating mode with the remote API : wait for its answer before continuing (blocking mode)</code></div>
+<div class="line number22 index21 alt1"><code class="py spaces">    </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiConstants.htm</code></div>
+<div class="line number23 index22 alt2"><code class="py spaces">    </code><code class="py plain">opmode </code><code class="py keyword">=</code> <code class="py plain">vrep.simx_opmode_oneshot_wait</code></div>
+<div class="line number24 index23 alt1"> </div>
+<div class="line number25 index24 alt2"><code class="py spaces">    </code><code class="py comments"># Try to retrieve motors and robot handlers</code></div>
+<div class="line number26 index25 alt1"><code class="py spaces">    </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxGetObjectHandle</code></div>
+<div class="line number27 index26 alt2"><code class="py spaces">    </code><code class="py plain">ret1, wristHandle </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectHandle(clientID, </code><code class="py string">"WristMotor"</code><code class="py plain">, opmode)</code></div>
+<div class="line number28 index27 alt1"><code class="py spaces">    </code><code class="py plain">ret2, elbowHandle </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectHandle(clientID, </code><code class="py string">"ElbowMotor"</code><code class="py plain">, opmode)</code></div>
+<div class="line number29 index28 alt2"><code class="py spaces">    </code><code class="py plain">ret3, shoulderHandle </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectHandle(clientID, </code><code class="py string">"ShoulderMotor"</code><code class="py plain">, opmode)</code></div>
+<div class="line number30 index29 alt1"><code class="py spaces">    </code><code class="py plain">ret4, robotHandle </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectHandle(clientID, </code><code class="py string">"2W1A"</code><code class="py plain">, opmode)</code></div>
+<div class="line number31 index30 alt2"> </div>
+<div class="line number32 index31 alt1"><code class="py spaces">    </code><code class="py comments"># If handlers are OK, execute three random simulations</code></div>
+<div class="line number33 index32 alt2"><code class="py spaces">    </code><code class="py keyword">if</code> <code class="py plain">ret1 </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py value">0</code> <code class="py keyword">and</code> <code class="py plain">ret2 </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py value">0</code> <code class="py keyword">and</code> <code class="py plain">ret3 </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py value">0</code><code class="py plain">:</code></div>
+<div class="line number34 index33 alt1"><code class="py spaces">        </code><code class="py plain">random.seed()</code></div>
+<div class="line number35 index34 alt2"><code class="py spaces">        </code><code class="py keyword">for</code> <code class="py plain">i </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">3</code><code class="py plain">):</code></div>
+<div class="line number36 index35 alt1"><code class="py spaces">            </code><code class="py comments"># Start the simulation</code></div>
+<div class="line number37 index36 alt2"><code class="py spaces">            </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxStartSimulation</code></div>
+<div class="line number38 index37 alt1"><code class="py spaces">            </code><code class="py plain">vrep.simxStartSimulation(clientID, opmode)</code></div>
+<div class="line number39 index38 alt2"><code class="py spaces">            </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"----- Simulation started -----"</code><code class="py plain">)</code></div>
+<div class="line number40 index39 alt1"> </div>
+<div class="line number41 index40 alt2"><code class="py spaces">            </code><code class="py comments"># Start getting the robot position</code></div>
+<div class="line number42 index41 alt1"><code class="py spaces">            </code><code class="py comments"># Unlike other commands, we will use a streaming operating mode</code></div>
+<div class="line number43 index42 alt2"><code class="py spaces">            </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxGetObjectPosition</code></div>
+<div class="line number44 index43 alt1"><code class="py spaces">            </code><code class="py plain">pret, robotPos </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectPosition(clientID, robotHandle, </code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">, vrep.simx_opmode_streaming)</code></div>
+<div class="line number45 index44 alt2"><code class="py spaces">            </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"2w1a position: (x = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotPos[</code><code class="py value">0</code><code class="py plain">]) </code><code class="py keyword">+</code><code class="py plain">\</code></div>
+<div class="line number46 index45 alt1"><code class="py spaces">                  </code><code class="py string">", y = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotPos[</code><code class="py value">1</code><code class="py plain">]) </code><code class="py keyword">+</code> <code class="py string">")"</code><code class="py plain">)</code></div>
+<div class="line number47 index46 alt2"> </div>
+<div class="line number48 index47 alt1"><code class="py spaces">            </code><code class="py comments"># Start getting the robot orientation</code></div>
+<div class="line number49 index48 alt2"><code class="py spaces">            </code><code class="py comments"># Unlike other commands, we will use a streaming operating mode</code></div>
+<div class="line number50 index49 alt1"><code class="py spaces">            </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxGetObjectOrientation</code></div>
+<div class="line number51 index50 alt2"><code class="py spaces">            </code><code class="py plain">oret, robotOrient </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectOrientation(clientID, robotHandle, </code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">, vrep.simx_opmode_streaming)</code></div>
+<div class="line number52 index51 alt1"><code class="py spaces">            </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"2w1a orientation: (x = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotOrient[</code><code class="py value">0</code><code class="py plain">]) </code><code class="py keyword">+</code> <code class="py plain">\</code></div>
+<div class="line number53 index52 alt2"><code class="py spaces">                  </code><code class="py string">", y = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotOrient[</code><code class="py value">1</code><code class="py plain">]) </code><code class="py keyword">+</code><code class="py plain">\</code></div>
+<div class="line number54 index53 alt1"><code class="py spaces">                  </code><code class="py string">", z = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotOrient[</code><code class="py value">2</code><code class="py plain">]) </code><code class="py keyword">+</code> <code class="py string">")"</code><code class="py plain">)</code></div>
+<div class="line number55 index54 alt2"> </div>
+<div class="line number56 index55 alt1"><code class="py spaces">            </code><code class="py comments"># Make the robot move randomly five times</code></div>
+<div class="line number57 index56 alt2"><code class="py spaces">            </code><code class="py keyword">for</code> <code class="py plain">j </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">5</code><code class="py plain">):</code></div>
+<div class="line number58 index57 alt1"><code class="py spaces">                </code><code class="py comments"># Generating random positions for the motors</code></div>
+<div class="line number59 index58 alt2"><code class="py spaces">                </code><code class="py plain">awrist </code><code class="py keyword">=</code> <code class="py plain">random.randint(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">300</code><code class="py plain">)</code></div>
+<div class="line number60 index59 alt1"><code class="py spaces">                </code><code class="py plain">aelbow </code><code class="py keyword">=</code> <code class="py plain">random.randint(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">300</code><code class="py plain">)</code></div>
+<div class="line number61 index60 alt2"><code class="py spaces">                </code><code class="py plain">ashoulder </code><code class="py keyword">=</code> <code class="py plain">random.randint(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">300</code><code class="py plain">)</code></div>
+<div class="line number62 index61 alt1"> </div>
+<div class="line number63 index62 alt2"><code class="py spaces">                </code><code class="py comments"># The control functions use Radians to determine the target position.</code></div>
+<div class="line number64 index63 alt1"><code class="py spaces">                </code><code class="py comments"># Here, we use maths.radians to convert degrees into radians.</code></div>
+<div class="line number65 index64 alt2"><code class="py spaces">                </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxSetJointTargetPosition</code></div>
+<div class="line number66 index65 alt1"><code class="py spaces">                </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"Motors target positions: "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(ashoulder) </code><code class="py keyword">+</code> <code class="py string">" "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(aelbow) </code><code class="py keyword">+</code> <code class="py string">" "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(awrist))</code></div>
+<div class="line number67 index66 alt2"><code class="py spaces">                </code><code class="py plain">vrep.simxSetJointTargetPosition(clientID, wristHandle, math.radians(awrist), opmode)</code></div>
+<div class="line number68 index67 alt1"><code class="py spaces">                </code><code class="py plain">vrep.simxSetJointTargetPosition(clientID, elbowHandle, math.radians(aelbow), opmode)</code></div>
+<div class="line number69 index68 alt2"><code class="py spaces">                </code><code class="py plain">vrep.simxSetJointTargetPosition(clientID, shoulderHandle, math.radians(ashoulder), opmode)</code></div>
+<div class="line number70 index69 alt1"> </div>
+<div class="line number71 index70 alt2"><code class="py spaces">                </code><code class="py comments"># Wait in order to let the motors finish their movements</code></div>
+<div class="line number72 index71 alt1"><code class="py spaces">                </code><code class="py comments"># Tip: there must be a more efficient way to do it...</code></div>
+<div class="line number73 index72 alt2"><code class="py spaces">                </code><code class="py plain">time.sleep(</code><code class="py value">5</code><code class="py plain">)</code></div>
+<div class="line number74 index73 alt1"> </div>
+<div class="line number75 index74 alt2"><code class="py spaces">                </code><code class="py comments"># Get the motors effective positions after the movement sequence</code></div>
+<div class="line number76 index75 alt1"><code class="py spaces">                </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxGetJointPosition</code></div>
+<div class="line number77 index76 alt2"><code class="py spaces">                </code><code class="py plain">pwrist </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetJointPosition(clientID, wristHandle, opmode)</code></div>
+<div class="line number78 index77 alt1"><code class="py spaces">                </code><code class="py plain">pelbow </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetJointPosition(clientID, elbowHandle, opmode)</code></div>
+<div class="line number79 index78 alt2"><code class="py spaces">                </code><code class="py plain">pshoulder </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetJointPosition(clientID, shoulderHandle, opmode)</code></div>
+<div class="line number80 index79 alt1"><code class="py spaces">                </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"Motors reached positions: "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(ashoulder) </code><code class="py keyword">+</code> <code class="py string">" "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(aelbow) </code><code class="py keyword">+</code> <code class="py string">" "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(awrist))</code></div>
+<div class="line number81 index80 alt2"> </div>
+<div class="line number82 index81 alt1"><code class="py spaces">                </code><code class="py comments"># Get the robot position after the movement sequence</code></div>
+<div class="line number83 index82 alt2"><code class="py spaces">                </code><code class="py plain">pret, robotPos </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectPosition(clientID, robotHandle, </code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">, vrep.simx_opmode_buffer)</code></div>
+<div class="line number84 index83 alt1"><code class="py spaces">                </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"2w1a position: (x = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotPos[</code><code class="py value">0</code><code class="py plain">]) </code><code class="py keyword">+</code><code class="py plain">\</code></div>
+<div class="line number85 index84 alt2"><code class="py spaces">                      </code><code class="py string">", y = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotPos[</code><code class="py value">1</code><code class="py plain">]) </code><code class="py keyword">+</code> <code class="py string">")"</code><code class="py plain">)</code></div>
+<div class="line number86 index85 alt1"> </div>
+<div class="line number87 index86 alt2"><code class="py spaces">                </code><code class="py comments"># Get the robot orientation after the movement sequence</code></div>
+<div class="line number88 index87 alt1"><code class="py spaces">                </code><code class="py plain">oret, robotOrient </code><code class="py keyword">=</code> <code class="py plain">vrep.simxGetObjectOrientation(clientID, robotHandle, </code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">, vrep.simx_opmode_buffer)</code></div>
+<div class="line number89 index88 alt2"><code class="py spaces">                </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"2w1a orientation: (x = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotOrient[</code><code class="py value">0</code><code class="py plain">]) </code><code class="py keyword">+</code><code class="py plain">\</code></div>
+<div class="line number90 index89 alt1"><code class="py spaces">                      </code><code class="py string">", y = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotOrient[</code><code class="py value">1</code><code class="py plain">]) </code><code class="py keyword">+</code><code class="py plain">\</code></div>
+<div class="line number91 index90 alt2"><code class="py spaces">                      </code><code class="py string">", z = "</code> <code class="py keyword">+</code> <code class="py functions">str</code><code class="py plain">(robotOrient[</code><code class="py value">2</code><code class="py plain">]) </code><code class="py keyword">+</code> <code class="py string">")"</code><code class="py plain">)</code></div>
+<div class="line number92 index91 alt1"> </div>
+<div class="line number93 index92 alt2"><code class="py spaces">            </code><code class="py comments"># End the simulation, wait to be sure V-REP had the time to stop it entirely</code></div>
+<div class="line number94 index93 alt1"><code class="py spaces">            </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxStopSimulation</code></div>
+<div class="line number95 index94 alt2"><code class="py spaces">            </code><code class="py plain">vrep.simxStopSimulation(clientID, opmode)</code></div>
+<div class="line number96 index95 alt1"><code class="py spaces">            </code><code class="py plain">time.sleep(</code><code class="py value">1</code><code class="py plain">)</code></div>
+<div class="line number97 index96 alt2"><code class="py spaces">            </code><code class="py functions">print</code><code class="py plain">(</code><code class="py string">"----- Simulation ended -----"</code><code class="py plain">)</code></div>
+<div class="line number98 index97 alt1"> </div>
+<div class="line number99 index98 alt2"><code class="py spaces">    </code><code class="py comments"># Close the connection to V-REP remote server</code></div>
+<div class="line number100 index99 alt1"><code class="py spaces">    </code><code class="py comments"># http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxFinish</code></div>
+<div class="line number101 index100 alt2"><code class="py spaces">    </code><code class="py plain">vrep.simxFinish(clientID)</code></div>
+<div class="line number102 index101 alt1"><code class="py keyword">else</code><code class="py plain">:</code></div>
+<div class="line number103 index102 alt2"><code class="py spaces">    </code><code class="py functions">print</code> <code class="py plain">(</code><code class="py string">'Failed connecting to remote API server'</code><code class="py plain">)</code></div>
+<div class="line number104 index103 alt1"><code class="py functions">print</code> <code class="py plain">(</code><code class="py string">'End'</code><code class="py plain">)</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h4>CoppeliaSim 場景 remote API 協同監控流程:</h4>
+<ol>
+<li>各組員下載<span> </span><a href="https://portableapps.com/apps/music_video/obs-studio-portable">https://portableapps.com/apps/music_video/obs-studio-portable</a></li>
+<li>擔任 CoppliaSim 場景直播者時, 必須以 @gm 帳號登入 Youtube 後, 啟動 Live stream 取得直播串流金鑰, 將金鑰輸入 OBS 後, 擷取電腦顯示器啟動串流, 然後利用 copy video url 取得直播網址.</li>
+<li>將直播網誌公布在<span> </span><a href="https://gitter.im/mdecourse/cd2021">https://gitter.im/mdecourse/cd2021</a>, 並附上伺服器 IPv4 內部網路 IP 位址與場景開放埠號.</li>
+<li>直播者同時必須在個人網站上公布 Python remote API 操控直播場景相關參變數以及監控條件.</li>
+<li>待遠端各協同操控學員準備就緒後, 完成操控流程後將所錄製的影片嵌入個人與分組網站中.</li>
+</ol>
+<br />task 1 << <a href='task 1.html'>Previous</a> <a href='task 3.html'>Next</a> >> task 3</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
