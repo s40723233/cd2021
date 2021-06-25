@@ -96,7 +96,8 @@
 <h3>W9</h3>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Bi5UnJ_eW54" width="560"></iframe></p>
 <h2>stage 3</h2>
-<h3>W10 小組task</h3>
+<h3>W10</h3>
+<h3>小組task</h3>
 <h5>task 1</h5>
 <p>讀取 stage3_2a.txt, 建立 Stage3 的分組倉儲, 分組網頁, 以及各組員倉儲及網頁連結.</p>
 <p>已知<span> </span><a href="http://mde.tw/cd2021/downloads/stage3/stage3_2a.txt">stage3_2a.txt</a><span> </span>與<span> </span><a href="http://mde.tw/cd2021/downloads/stage3/stage3_2b.txt">stage3_2b.txt</a><span> </span>內容, 以及初步資料讀取程式:</p>
@@ -1051,6 +1052,367 @@
 <h4>手臂末端加入 components-gripper-suction pad 吸盤<span> </span></h4>
 <h4>逆向運動學函式.</h4>
 <h4>Python remote API 逆向運動學函式</h4>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/DmFKm_fSgL4" width="560"></iframe></p>
+<h4>取分項目3:<span>末端接上 force sensor 後接上標準 suction pad </span></h4>
+<h4><a href="https://40823245.github.io/cd2021/downloads/W16-3.rar">檔案</a></h4>
+<h4>程式碼(lua)</h4>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_992717">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+<div class="line number21 index20 alt2">21</div>
+<div class="line number22 index21 alt1">22</div>
+<div class="line number23 index22 alt2">23</div>
+<div class="line number24 index23 alt1">24</div>
+<div class="line number25 index24 alt2">25</div>
+<div class="line number26 index25 alt1">26</div>
+<div class="line number27 index26 alt2">27</div>
+<div class="line number28 index27 alt1">28</div>
+<div class="line number29 index28 alt2">29</div>
+<div class="line number30 index29 alt1">30</div>
+<div class="line number31 index30 alt2">31</div>
+<div class="line number32 index31 alt1">32</div>
+<div class="line number33 index32 alt2">33</div>
+<div class="line number34 index33 alt1">34</div>
+<div class="line number35 index34 alt2">35</div>
+<div class="line number36 index35 alt1">36</div>
+<div class="line number37 index36 alt2">37</div>
+<div class="line number38 index37 alt1">38</div>
+<div class="line number39 index38 alt2">39</div>
+<div class="line number40 index39 alt1">40</div>
+<div class="line number41 index40 alt2">41</div>
+<div class="line number42 index41 alt1">42</div>
+<div class="line number43 index42 alt2">43</div>
+<div class="line number44 index43 alt1">44</div>
+<div class="line number45 index44 alt2">45</div>
+<div class="line number46 index45 alt1">46</div>
+<div class="line number47 index46 alt2">47</div>
+<div class="line number48 index47 alt1">48</div>
+<div class="line number49 index48 alt2">49</div>
+<div class="line number50 index49 alt1">50</div>
+<div class="line number51 index50 alt2">51</div>
+<div class="line number52 index51 alt1">52</div>
+<div class="line number53 index52 alt2">53</div>
+<div class="line number54 index53 alt1">54</div>
+<div class="line number55 index54 alt2">55</div>
+<div class="line number56 index55 alt1">56</div>
+<div class="line number57 index56 alt2">57</div>
+<div class="line number58 index57 alt1">58</div>
+<div class="line number59 index58 alt2">59</div>
+<div class="line number60 index59 alt1">60</div>
+<div class="line number61 index60 alt2">61</div>
+<div class="line number62 index61 alt1">62</div>
+<div class="line number63 index62 alt2">63</div>
+<div class="line number64 index63 alt1">64</div>
+<div class="line number65 index64 alt2">65</div>
+<div class="line number66 index65 alt1">66</div>
+<div class="line number67 index66 alt2">67</div>
+<div class="line number68 index67 alt1">68</div>
+<div class="line number69 index68 alt2">69</div>
+<div class="line number70 index69 alt1">70</div>
+<div class="line number71 index70 alt2">71</div>
+<div class="line number72 index71 alt1">72</div>
+<div class="line number73 index72 alt2">73</div>
+<div class="line number74 index73 alt1">74</div>
+<div class="line number75 index74 alt2">75</div>
+<div class="line number76 index75 alt1">76</div>
+<div class="line number77 index76 alt2">77</div>
+<div class="line number78 index77 alt1">78</div>
+<div class="line number79 index78 alt2">79</div>
+<div class="line number80 index79 alt1">80</div>
+<div class="line number81 index80 alt2">81</div>
+<div class="line number82 index81 alt1">82</div>
+<div class="line number83 index82 alt2">83</div>
+<div class="line number84 index83 alt1">84</div>
+<div class="line number85 index84 alt2">85</div>
+<div class="line number86 index85 alt1">86</div>
+<div class="line number87 index86 alt2">87</div>
+<div class="line number88 index87 alt1">88</div>
+<div class="line number89 index88 alt2">89</div>
+<div class="line number90 index89 alt1">90</div>
+<div class="line number91 index90 alt2">91</div>
+<div class="line number92 index91 alt1">92</div>
+<div class="line number93 index92 alt2">93</div>
+<div class="line number94 index93 alt1">94</div>
+<div class="line number95 index94 alt2">95</div>
+<div class="line number96 index95 alt1">96</div>
+<div class="line number97 index96 alt2">97</div>
+<div class="line number98 index97 alt1">98</div>
+<div class="line number99 index98 alt2">99</div>
+<div class="line number100 index99 alt1">100</div>
+<div class="line number101 index100 alt2">101</div>
+<div class="line number102 index101 alt1">102</div>
+<div class="line number103 index102 alt2">103</div>
+<div class="line number104 index103 alt1">104</div>
+<div class="line number105 index104 alt2">105</div>
+<div class="line number106 index105 alt1">106</div>
+<div class="line number107 index106 alt2">107</div>
+<div class="line number108 index107 alt1">108</div>
+<div class="line number109 index108 alt2">109</div>
+<div class="line number110 index109 alt1">110</div>
+<div class="line number111 index110 alt2">111</div>
+<div class="line number112 index111 alt1">112</div>
+<div class="line number113 index112 alt2">113</div>
+<div class="line number114 index113 alt1">114</div>
+<div class="line number115 index114 alt2">115</div>
+<div class="line number116 index115 alt1">116</div>
+<div class="line number117 index116 alt2">117</div>
+<div class="line number118 index117 alt1">118</div>
+<div class="line number119 index118 alt2">119</div>
+<div class="line number120 index119 alt1">120</div>
+<div class="line number121 index120 alt2">121</div>
+<div class="line number122 index121 alt1">122</div>
+<div class="line number123 index122 alt2">123</div>
+<div class="line number124 index123 alt1">124</div>
+<div class="line number125 index124 alt2">125</div>
+<div class="line number126 index125 alt1">126</div>
+<div class="line number127 index126 alt2">127</div>
+<div class="line number128 index127 alt1">128</div>
+<div class="line number129 index128 alt2">129</div>
+<div class="line number130 index129 alt1">130</div>
+<div class="line number131 index130 alt2">131</div>
+<div class="line number132 index131 alt1">132</div>
+<div class="line number133 index132 alt2">133</div>
+<div class="line number134 index133 alt1">134</div>
+<div class="line number135 index134 alt2">135</div>
+<div class="line number136 index135 alt1">136</div>
+<div class="line number137 index136 alt2">137</div>
+<div class="line number138 index137 alt1">138</div>
+<div class="line number139 index138 alt2">139</div>
+<div class="line number140 index139 alt1">140</div>
+<div class="line number141 index140 alt2">141</div>
+<div class="line number142 index141 alt1">142</div>
+<div class="line number143 index142 alt2">143</div>
+<div class="line number144 index143 alt1">144</div>
+<div class="line number145 index144 alt2">145</div>
+<div class="line number146 index145 alt1">146</div>
+<div class="line number147 index146 alt2">147</div>
+<div class="line number148 index147 alt1">148</div>
+<div class="line number149 index148 alt2">149</div>
+<div class="line number150 index149 alt1">150</div>
+<div class="line number151 index150 alt2">151</div>
+<div class="line number152 index151 alt1">152</div>
+<div class="line number153 index152 alt2">153</div>
+<div class="line number154 index153 alt1">154</div>
+<div class="line number155 index154 alt2">155</div>
+<div class="line number156 index155 alt1">156</div>
+<div class="line number157 index156 alt2">157</div>
+<div class="line number158 index157 alt1">158</div>
+<div class="line number159 index158 alt2">159</div>
+<div class="line number160 index159 alt1">160</div>
+<div class="line number161 index160 alt2">161</div>
+<div class="line number162 index161 alt1">162</div>
+<div class="line number163 index162 alt2">163</div>
+<div class="line number164 index163 alt1">164</div>
+<div class="line number165 index164 alt2">165</div>
+<div class="line number166 index165 alt1">166</div>
+<div class="line number167 index166 alt2">167</div>
+<div class="line number168 index167 alt1">168</div>
+<div class="line number169 index168 alt2">169</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py plain">function sysCall_init() </code></div>
+<div class="line number2 index1 alt1"><code class="py spaces">    </code><code class="py plain">axis1</code><code class="py keyword">=</code><code class="py plain">sim.getObjectHandle(</code><code class="py string">'MTB_axis1'</code><code class="py plain">)</code></div>
+<div class="line number3 index2 alt2"><code class="py spaces">    </code><code class="py plain">axis2</code><code class="py keyword">=</code><code class="py plain">sim.getObjectHandle(</code><code class="py string">'MTB_axis2'</code><code class="py plain">)</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code><code class="py plain">axis3</code><code class="py keyword">=</code><code class="py plain">sim.getObjectHandle(</code><code class="py string">'MTB_axis3'</code><code class="py plain">)</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py plain">axis4</code><code class="py keyword">=</code><code class="py plain">sim.getObjectHandle(</code><code class="py string">'MTB_axis4'</code><code class="py plain">)</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">    </code><code class="py plain">mtb3</code><code class="py keyword">=</code><code class="py plain">sim.getObjectHandle(</code><code class="py string">'MTB_link3Respondable'</code><code class="py plain">)</code></div>
+<div class="line number7 index6 alt2"><code class="py spaces">    </code><code class="py plain">suctionPad</code><code class="py keyword">=</code><code class="py plain">sim.getObjectHandle(</code><code class="py string">'suctionPad'</code><code class="py plain">)</code></div>
+<div class="line number8 index7 alt1"><code class="py spaces">    </code><code class="py plain">BaseFrame</code><code class="py keyword">=</code><code class="py plain">sim.getObjectHandle(</code><code class="py string">"BaseFrame"</code><code class="py plain">)</code></div>
+<div class="line number9 index8 alt2"><code class="py spaces">    </code><code class="py plain">block </code><code class="py keyword">=</code><code class="py plain">sim.getObjectHandle(</code><code class="py string">"block"</code><code class="py plain">)</code></div>
+<div class="line number10 index9 alt1"><code class="py spaces">    </code><code class="py plain">rotation1 </code><code class="py keyword">=</code> <code class="py value">0</code></div>
+<div class="line number11 index10 alt2"><code class="py spaces">    </code><code class="py plain">rotation2 </code><code class="py keyword">=</code> <code class="py value">0</code></div>
+<div class="line number12 index11 alt1"><code class="py spaces">    </code><code class="py plain">distance3 </code><code class="py keyword">=</code> <code class="py value">0</code></div>
+<div class="line number13 index12 alt2"><code class="py spaces">    </code><code class="py plain">deg </code><code class="py keyword">=</code> <code class="py plain">math.pi</code><code class="py keyword">/</code><code class="py value">180</code></div>
+<div class="line number14 index13 alt1"><code class="py plain">end</code></div>
+<div class="line number15 index14 alt2"><code class="py plain">function sysCall_actuation() </code></div>
+<div class="line number16 index15 alt1"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">吸盤往下降時, 直接貼在方塊頂部的校正值, 單位 m</code></div>
+<div class="line number17 index16 alt2"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">向下較正值為 </code><code class="py value">4.2</code> <code class="py plain">mm</code></div>
+<div class="line number18 index17 alt1"><code class="py spaces">    </code><code class="py plain">calibration </code><code class="py keyword">=</code> <code class="py value">0.0042</code></div>
+<div class="line number19 index18 alt2"><code class="py spaces">    </code><code class="py plain">message, auxiliaryData</code><code class="py keyword">=</code><code class="py plain">sim.getSimulatorMessage()</code></div>
+<div class="line number20 index19 alt1"><code class="py spaces">        </code><code class="py keyword">while</code> <code class="py plain">message ~</code><code class="py keyword">=</code> <code class="py keyword">-</code><code class="py value">1</code> <code class="py plain">do</code></div>
+<div class="line number21 index20 alt2"><code class="py spaces">            </code><code class="py plain">key</code><code class="py keyword">=</code><code class="py plain">auxiliaryData[</code><code class="py value">1</code><code class="py plain">]</code></div>
+<div class="line number22 index21 alt1"><code class="py spaces">            </code><code class="py plain">sim.addStatusbarMessage(</code><code class="py string">'使用者按下 key:'</code><code class="py plain">..key)</code></div>
+<div class="line number23 index22 alt2"><code class="py spaces">            </code><code class="py keyword">if</code> <code class="py plain">(message</code><code class="py keyword">=</code><code class="py keyword">=</code><code class="py plain">sim.message_keypress) then</code></div>
+<div class="line number24 index23 alt1"> </div>
+<div class="line number25 index24 alt2"><code class="py spaces">                </code><code class="py keyword">if</code> <code class="py plain">(auxiliaryData[</code><code class="py value">1</code><code class="py plain">]</code><code class="py keyword">=</code><code class="py keyword">=</code><code class="py value">97</code><code class="py plain">) then </code><code class="py keyword">-</code><code class="py keyword">-</code><code class="py plain">r right turn </code><code class="py keyword">in</code> <code class="py plain">degree</code></div>
+<div class="line number26 index25 alt1"><code class="py spaces">                    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">key r pressed axis1 angle adds </code><code class="py value">5</code> <code class="py plain">degrees</code></div>
+<div class="line number27 index26 alt2"><code class="py spaces">                     </code><code class="py plain">rotation1 </code><code class="py keyword">=</code> <code class="py plain">rotation1 </code><code class="py keyword">+</code> <code class="py value">5</code><code class="py keyword">*</code><code class="py plain">deg</code></div>
+<div class="line number28 index27 alt1"><code class="py spaces">                     </code><code class="py plain">sim.setJointPosition(axis1, rotation1)</code></div>
+<div class="line number29 index28 alt2"><code class="py spaces">                </code><code class="py plain">end </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">r</code></div>
+<div class="line number30 index29 alt1"><code class="py spaces">                </code><code class="py keyword">if</code> <code class="py plain">(auxiliaryData[</code><code class="py value">1</code><code class="py plain">]</code><code class="py keyword">=</code><code class="py keyword">=</code><code class="py value">115</code><code class="py plain">) then </code><code class="py keyword">-</code><code class="py keyword">-</code><code class="py plain">l left turn </code><code class="py keyword">in</code> <code class="py plain">degree</code></div>
+<div class="line number31 index30 alt2"><code class="py spaces">                    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">key l pressed axis1 angle substract </code><code class="py value">5</code> <code class="py plain">degrees</code></div>
+<div class="line number32 index31 alt1"><code class="py spaces">                     </code><code class="py plain">rotation1 </code><code class="py keyword">=</code> <code class="py plain">rotation1 </code><code class="py keyword">-</code> <code class="py value">5</code><code class="py keyword">*</code><code class="py plain">deg</code></div>
+<div class="line number33 index32 alt2"><code class="py spaces">                     </code><code class="py plain">sim.setJointPosition(axis1, rotation1)</code></div>
+<div class="line number34 index33 alt1"><code class="py spaces">                </code><code class="py plain">end </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">l</code></div>
+<div class="line number35 index34 alt2"><code class="py spaces">                </code><code class="py keyword">if</code> <code class="py plain">(auxiliaryData[</code><code class="py value">1</code><code class="py plain">]</code><code class="py keyword">=</code><code class="py keyword">=</code><code class="py value">122</code><code class="py plain">) then </code><code class="py keyword">-</code><code class="py keyword">-</code><code class="py plain">r right turn </code><code class="py keyword">in</code> <code class="py plain">degree</code></div>
+<div class="line number36 index35 alt1"><code class="py spaces">                    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">key r pressed axis1 angle adds </code><code class="py value">5</code> <code class="py plain">degrees</code></div>
+<div class="line number37 index36 alt2"><code class="py spaces">                     </code><code class="py plain">rotation2 </code><code class="py keyword">=</code> <code class="py plain">rotation2 </code><code class="py keyword">+</code> <code class="py value">5</code><code class="py keyword">*</code><code class="py plain">deg</code></div>
+<div class="line number38 index37 alt1"><code class="py spaces">                     </code><code class="py plain">sim.setJointPosition(axis2, rotation2)</code></div>
+<div class="line number39 index38 alt2"><code class="py spaces">                </code><code class="py plain">end </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">r</code></div>
+<div class="line number40 index39 alt1"><code class="py spaces">                </code><code class="py keyword">if</code> <code class="py plain">(auxiliaryData[</code><code class="py value">1</code><code class="py plain">]</code><code class="py keyword">=</code><code class="py keyword">=</code><code class="py value">120</code><code class="py plain">) then </code><code class="py keyword">-</code><code class="py keyword">-</code><code class="py plain">l left turn </code><code class="py keyword">in</code> <code class="py plain">degree</code></div>
+<div class="line number41 index40 alt2"><code class="py spaces">                    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">key l pressed axis1 angle substract </code><code class="py value">5</code> <code class="py plain">degrees</code></div>
+<div class="line number42 index41 alt1"><code class="py spaces">                     </code><code class="py plain">rotation2 </code><code class="py keyword">=</code> <code class="py plain">rotation2 </code><code class="py keyword">-</code> <code class="py value">5</code><code class="py keyword">*</code><code class="py plain">deg</code></div>
+<div class="line number43 index42 alt2"><code class="py spaces">                     </code><code class="py plain">sim.setJointPosition(axis2, rotation2)</code></div>
+<div class="line number44 index43 alt1"><code class="py spaces">                </code><code class="py plain">end </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">l</code></div>
+<div class="line number45 index44 alt2"><code class="py spaces">                </code><code class="py keyword">if</code> <code class="py plain">(auxiliaryData[</code><code class="py value">1</code><code class="py plain">]</code><code class="py keyword">=</code><code class="py keyword">=</code><code class="py value">112</code><code class="py plain">) then </code><code class="py keyword">-</code><code class="py keyword">-</code><code class="py plain">p activate the suction pad</code></div>
+<div class="line number46 index45 alt1"><code class="py spaces">                    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">key p pressed activate the suction mode</code></div>
+<div class="line number47 index46 alt2"><code class="py spaces">            </code><code class="py plain">sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),</code><code class="py string">'active'</code><code class="py plain">,</code><code class="py string">'true'</code><code class="py plain">)</code></div>
+<div class="line number48 index47 alt1"><code class="py spaces">                </code><code class="py plain">end </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">p</code></div>
+<div class="line number49 index48 alt2"><code class="py spaces">                </code><code class="py keyword">if</code> <code class="py plain">(auxiliaryData[</code><code class="py value">1</code><code class="py plain">]</code><code class="py keyword">=</code><code class="py keyword">=</code><code class="py value">113</code><code class="py plain">) then </code><code class="py keyword">-</code><code class="py keyword">-</code><code class="py plain">q deactivate the suction pad</code></div>
+<div class="line number50 index49 alt1"><code class="py spaces">                    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">key q pressed deactivate the suction mode</code></div>
+<div class="line number51 index50 alt2"><code class="py plain">sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),</code><code class="py string">'active'</code><code class="py plain">,</code><code class="py string">'false'</code><code class="py plain">)</code></div>
+<div class="line number52 index51 alt1"><code class="py spaces">                </code><code class="py plain">end </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">q</code></div>
+<div class="line number53 index52 alt2"><code class="py spaces">                 </code><code class="py keyword">if</code> <code class="py plain">(auxiliaryData[</code><code class="py value">1</code><code class="py plain">]</code><code class="py keyword">=</code><code class="py keyword">=</code><code class="py value">100</code><code class="py plain">) then </code><code class="py keyword">-</code><code class="py keyword">-</code><code class="py plain">d suction pad down</code></div>
+<div class="line number54 index53 alt1"><code class="py spaces">                    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">key d pressed axis3 will down </code><code class="py value">0.01</code> <code class="py plain">m plus calibration</code></div>
+<div class="line number55 index54 alt2"><code class="py spaces">                     </code><code class="py plain">distance3 </code><code class="py keyword">=</code> <code class="py plain">distance3 </code><code class="py keyword">+</code> <code class="py value">0.01</code> <code class="py keyword">+</code> <code class="py plain">calibration</code></div>
+<div class="line number56 index55 alt1"><code class="py spaces">                     </code><code class="py plain">sim.setJointPosition(axis3, distance3)</code></div>
+<div class="line number57 index56 alt2"><code class="py spaces">                </code><code class="py plain">end </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">d</code></div>
+<div class="line number58 index57 alt1"><code class="py spaces">                </code><code class="py keyword">if</code> <code class="py plain">(auxiliaryData[</code><code class="py value">1</code><code class="py plain">]</code><code class="py keyword">=</code><code class="py keyword">=</code><code class="py value">117</code><code class="py plain">) then </code><code class="py keyword">-</code><code class="py keyword">-</code><code class="py plain">u suction pad up</code></div>
+<div class="line number59 index58 alt2"><code class="py spaces">                    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">key u pressed axis3 will up </code><code class="py value">0.01</code> <code class="py plain">m minus calibration</code></div>
+<div class="line number60 index59 alt1"><code class="py spaces">                    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">吸盤往下升 </code><code class="py value">1</code> <code class="py plain">公分加上校正值</code></div>
+<div class="line number61 index60 alt2"><code class="py spaces">                     </code><code class="py plain">distance3 </code><code class="py keyword">=</code> <code class="py plain">distance3 </code><code class="py keyword">-</code> <code class="py value">0.01</code> <code class="py keyword">-</code> <code class="py plain">calibration</code></div>
+<div class="line number62 index61 alt1"><code class="py spaces">                     </code><code class="py plain">sim.setJointPosition(axis3, distance3)</code></div>
+<div class="line number63 index62 alt2"><code class="py spaces">                </code><code class="py plain">end </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code> <code class="py plain">u</code></div>
+<div class="line number64 index63 alt1"><code class="py spaces">           </code><code class="py plain">end  </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">if</code></div>
+<div class="line number65 index64 alt2"><code class="py spaces">    </code><code class="py plain">message, auxiliaryData</code><code class="py keyword">=</code><code class="py plain">sim.getSimulatorMessage()</code></div>
+<div class="line number66 index65 alt1"><code class="py spaces">        </code><code class="py plain">end </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py keyword">while</code></div>
+<div class="line number67 index66 alt2"><code class="py plain">end </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">function</code></div>
+<div class="line number68 index67 alt1"><code class="py plain">function sysCall_sensing() </code></div>
+<div class="line number69 index68 alt2"><code class="py keyword">-</code><code class="py keyword">-</code><code class="py plain">[[</code></div>
+<div class="line number70 index69 alt1"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">Read Proximity sensor (</code><code class="py value">0</code><code class="py keyword">=</code> <code class="py plain">nothing detected, </code><code class="py value">1</code> <code class="py keyword">=</code> <code class="py functions">object</code> <code class="py plain">detected)</code></div>
+<div class="line number71 index70 alt2"><code class="py spaces">    </code><code class="py plain">local res </code><code class="py keyword">=</code> <code class="py plain">sim.readProximitySensor(proximity)</code></div>
+<div class="line number72 index71 alt1"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">Check </code><code class="py keyword">if</code> <code class="py plain">possible to insert an new box</code></div>
+<div class="line number73 index72 alt2"><code class="py spaces">    </code><code class="py keyword">if</code> <code class="py plain">(sim.getSimulationTime()</code><code class="py keyword">-</code><code class="py plain">T_last_inserted &gt; T_insert) </code><code class="py keyword">and</code> <code class="py keyword">not</code> <code class="py plain">hasStopped then</code></div>
+<div class="line number74 index73 alt1"><code class="py spaces">        </code><code class="py plain">insertBox()</code></div>
+<div class="line number75 index74 alt2"><code class="py spaces">    </code><code class="py plain">end</code></div>
+<div class="line number76 index75 alt1"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">If proximity sensor detects an </code><code class="py functions">object</code><code class="py plain">, stop the belt, stop inserting objects</code></div>
+<div class="line number77 index76 alt2"><code class="py spaces">    </code><code class="py keyword">if</code> <code class="py plain">res </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py value">1</code> <code class="py keyword">and</code> <code class="py keyword">not</code> <code class="py plain">hasStopped then</code></div>
+<div class="line number78 index77 alt1"><code class="py spaces">        </code><code class="py keyword">if</code> <code class="py plain">boolList[</code><code class="py value">1</code><code class="py plain">] then</code></div>
+<div class="line number79 index78 alt2"><code class="py spaces">            </code><code class="py plain">sim.setScriptSimulationParameter(sim.handle_self,</code><code class="py string">"conveyorBeltVelocity"</code><code class="py plain">,</code><code class="py value">0</code><code class="py plain">)</code></div>
+<div class="line number80 index79 alt1"><code class="py spaces">            </code><code class="py plain">deltaTime </code><code class="py keyword">=</code> <code class="py plain">sim.getSimulationTime()</code><code class="py keyword">-</code><code class="py plain">T_last_inserted</code></div>
+<div class="line number81 index80 alt2"><code class="py spaces">            </code><code class="py plain">hasStopped </code><code class="py keyword">=</code> <code class="py plain">true</code></div>
+<div class="line number82 index81 alt1"><code class="py spaces">        </code><code class="py keyword">else</code></div>
+<div class="line number83 index82 alt2"><code class="py spaces">            </code><code class="py plain">local box </code><code class="py keyword">=</code> <code class="py plain">table.remove(boxList,</code><code class="py value">1</code><code class="py plain">)</code></div>
+<div class="line number84 index83 alt1"><code class="py spaces">            </code><code class="py plain">local boxDummy </code><code class="py keyword">=</code> <code class="py plain">table.remove(boxDummyList,</code><code class="py value">1</code><code class="py plain">)</code></div>
+<div class="line number85 index84 alt2"><code class="py spaces">            </code><code class="py plain">table.remove(boolList,</code><code class="py value">1</code><code class="py plain">)</code></div>
+<div class="line number86 index85 alt1"><code class="py spaces">            </code><code class="py plain">sim.removeObject(box)</code></div>
+<div class="line number87 index86 alt2"><code class="py spaces">            </code><code class="py plain">sim.removeObject(boxDummy)</code></div>
+<div class="line number88 index87 alt1"><code class="py spaces">        </code><code class="py plain">end</code></div>
+<div class="line number89 index88 alt2"><code class="py spaces">    </code><code class="py plain">end</code></div>
+<div class="line number90 index89 alt1"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">If proximity sensor detects nothing </code><code class="py keyword">and</code> <code class="py plain">belt has stopped, start belt, </code><code class="py keyword">continue</code> <code class="py plain">inserting</code></div>
+<div class="line number91 index90 alt2"><code class="py spaces">    </code><code class="py keyword">if</code> <code class="py plain">res </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py value">0</code> <code class="py keyword">and</code> <code class="py plain">hasStopped then</code></div>
+<div class="line number92 index91 alt1"><code class="py spaces">        </code><code class="py plain">sim.setScriptSimulationParameter(sim.handle_self,</code><code class="py string">"conveyorBeltVelocity"</code><code class="py plain">,beltSpeed)</code></div>
+<div class="line number93 index92 alt2"><code class="py spaces">        </code><code class="py plain">hasStopped </code><code class="py keyword">=</code> <code class="py plain">false</code></div>
+<div class="line number94 index93 alt1"><code class="py spaces">        </code><code class="py plain">T_last_inserted </code><code class="py keyword">=</code> <code class="py plain">sim.getSimulationTime()</code><code class="py keyword">-</code><code class="py plain">deltaTime</code></div>
+<div class="line number95 index94 alt2"><code class="py spaces">    </code><code class="py plain">end</code></div>
+<div class="line number96 index95 alt1"><code class="py spaces">    </code> </div>
+<div class="line number97 index96 alt2"><code class="py plain">]]</code><code class="py keyword">-</code><code class="py keyword">-</code></div>
+<div class="line number98 index97 alt1"><code class="py plain">end</code></div>
+<div class="line number99 index98 alt2"><code class="py plain">function sysCall_cleanup() </code></div>
+<div class="line number100 index99 alt1"><code class="py plain">end </code></div>
+<div class="line number101 index100 alt2"><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">Convert a lua table into a lua syntactically correct string</code></div>
+<div class="line number102 index101 alt1"><code class="py plain">function table_to_string(tbl)</code></div>
+<div class="line number103 index102 alt2"><code class="py spaces">    </code><code class="py plain">local result </code><code class="py keyword">=</code> <code class="py string">"{"</code></div>
+<div class="line number104 index103 alt1"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">k, v </code><code class="py keyword">in</code> <code class="py plain">pairs(tbl) do</code></div>
+<div class="line number105 index104 alt2"><code class="py spaces">        </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">Check the key </code><code class="py functions">type</code> <code class="py plain">(ignore </code><code class="py functions">any</code> <code class="py plain">numerical keys </code><code class="py keyword">-</code> <code class="py plain">assume its an array)</code></div>
+<div class="line number106 index105 alt1"><code class="py spaces">        </code><code class="py keyword">if</code> <code class="py functions">type</code><code class="py plain">(k) </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py string">"string"</code> <code class="py plain">then</code></div>
+<div class="line number107 index106 alt2"><code class="py spaces">            </code><code class="py plain">result </code><code class="py keyword">=</code> <code class="py plain">result..</code><code class="py string">"[\""</code><code class="py plain">..k..</code><code class="py string">"\"]"</code><code class="py plain">..</code><code class="py string">"="</code></div>
+<div class="line number108 index107 alt1"><code class="py spaces">        </code><code class="py plain">end</code></div>
+<div class="line number109 index108 alt2"> </div>
+<div class="line number110 index109 alt1"><code class="py spaces">        </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">Check the value </code><code class="py functions">type</code></div>
+<div class="line number111 index110 alt2"><code class="py spaces">        </code><code class="py keyword">if</code> <code class="py functions">type</code><code class="py plain">(v) </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py string">"table"</code> <code class="py plain">then</code></div>
+<div class="line number112 index111 alt1"><code class="py spaces">            </code><code class="py plain">result </code><code class="py keyword">=</code> <code class="py plain">result..table_to_string(v)</code></div>
+<div class="line number113 index112 alt2"><code class="py spaces">        </code><code class="py plain">elseif </code><code class="py functions">type</code><code class="py plain">(v) </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py string">"boolean"</code> <code class="py plain">then</code></div>
+<div class="line number114 index113 alt1"><code class="py spaces">            </code><code class="py plain">result </code><code class="py keyword">=</code> <code class="py plain">result..tostring(v)</code></div>
+<div class="line number115 index114 alt2"><code class="py spaces">        </code><code class="py keyword">else</code></div>
+<div class="line number116 index115 alt1"><code class="py spaces">            </code><code class="py plain">v </code><code class="py keyword">=</code> <code class="py functions">round</code><code class="py plain">(v, </code><code class="py value">4</code><code class="py plain">)</code></div>
+<div class="line number117 index116 alt2"><code class="py spaces">            </code><code class="py plain">result </code><code class="py keyword">=</code> <code class="py plain">result..</code><code class="py string">"\""</code><code class="py plain">..v..</code><code class="py string">"\""</code></div>
+<div class="line number118 index117 alt1"><code class="py spaces">        </code><code class="py plain">end</code></div>
+<div class="line number119 index118 alt2"><code class="py spaces">        </code><code class="py plain">result </code><code class="py keyword">=</code> <code class="py plain">result..</code><code class="py string">","</code></div>
+<div class="line number120 index119 alt1"><code class="py spaces">    </code><code class="py plain">end</code></div>
+<div class="line number121 index120 alt2"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">Remove leading commas </code><code class="py keyword">from</code> <code class="py plain">the result</code></div>
+<div class="line number122 index121 alt1"><code class="py spaces">    </code><code class="py keyword">if</code> <code class="py plain">result ~</code><code class="py keyword">=</code> <code class="py plain">"" then</code></div>
+<div class="line number123 index122 alt2"><code class="py spaces">        </code><code class="py plain">result </code><code class="py keyword">=</code> <code class="py plain">result:sub(</code><code class="py value">1</code><code class="py plain">, result:</code><code class="py functions">len</code><code class="py plain">()</code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">)</code></div>
+<div class="line number124 index123 alt1"><code class="py spaces">    </code><code class="py plain">end</code></div>
+<div class="line number125 index124 alt2"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py plain">result..</code><code class="py string">"}"</code></div>
+<div class="line number126 index125 alt1"><code class="py plain">end</code></div>
+<div class="line number127 index126 alt2"><code class="py plain">function </code><code class="py functions">round</code><code class="py plain">(x, n)</code></div>
+<div class="line number128 index127 alt1"><code class="py spaces">    </code><code class="py plain">n </code><code class="py keyword">=</code> <code class="py plain">math.</code><code class="py functions">pow</code><code class="py plain">(</code><code class="py value">10</code><code class="py plain">, n </code><code class="py keyword">or</code> <code class="py value">0</code><code class="py plain">)</code></div>
+<div class="line number129 index128 alt2"><code class="py spaces">    </code><code class="py plain">x </code><code class="py keyword">=</code> <code class="py plain">x </code><code class="py keyword">*</code> <code class="py plain">n</code></div>
+<div class="line number130 index129 alt1"><code class="py spaces">    </code><code class="py keyword">if</code> <code class="py plain">x &gt;</code><code class="py keyword">=</code> <code class="py value">0</code> <code class="py plain">then x </code><code class="py keyword">=</code> <code class="py plain">math.floor(x </code><code class="py keyword">+</code> <code class="py value">0.5</code><code class="py plain">) </code><code class="py keyword">else</code> <code class="py plain">x </code><code class="py keyword">=</code> <code class="py plain">math.ceil(x </code><code class="py keyword">-</code> <code class="py value">0.5</code><code class="py plain">) end</code></div>
+<div class="line number131 index130 alt2"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py plain">x </code><code class="py keyword">/</code> <code class="py plain">n</code></div>
+<div class="line number132 index131 alt1"><code class="py plain">end</code></div>
+<div class="line number133 index132 alt2"> </div>
+<div class="line number134 index133 alt1"> </div>
+<div class="line number135 index134 alt2"><code class="py plain">function insertBox()</code></div>
+<div class="line number136 index135 alt1"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">Generate random numbers</code></div>
+<div class="line number137 index136 alt2"><code class="py spaces">    </code><code class="py plain">local rand1 </code><code class="py keyword">=</code> <code class="py plain">math.random()</code></div>
+<div class="line number138 index137 alt1"><code class="py spaces">    </code><code class="py plain">local rand2 </code><code class="py keyword">=</code> <code class="py plain">math.random()</code></div>
+<div class="line number139 index138 alt2"><code class="py spaces">    </code><code class="py plain">local rand3 </code><code class="py keyword">=</code> <code class="py plain">math.random()</code></div>
+<div class="line number140 index139 alt1"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">Generate random disturbances on position </code><code class="py keyword">and</code> <code class="py plain">orientation</code></div>
+<div class="line number141 index140 alt2"><code class="py spaces">    </code><code class="py plain">local dx </code><code class="py keyword">=</code> <code class="py plain">(</code><code class="py value">2</code><code class="py keyword">*</code><code class="py plain">rand1</code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">)</code><code class="py keyword">*</code><code class="py value">0.1</code></div>
+<div class="line number142 index141 alt1"><code class="py spaces">    </code><code class="py plain">local dy </code><code class="py keyword">=</code> <code class="py plain">(</code><code class="py value">2</code><code class="py keyword">*</code><code class="py plain">rand2</code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">)</code><code class="py keyword">*</code><code class="py value">0.1</code></div>
+<div class="line number143 index142 alt2"><code class="py spaces">    </code><code class="py plain">local dphi </code><code class="py keyword">=</code> <code class="py plain">(</code><code class="py value">2</code><code class="py keyword">*</code><code class="py plain">rand3</code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">)</code><code class="py keyword">*</code><code class="py value">0.5</code></div>
+<div class="line number144 index143 alt1"><code class="py spaces">    </code><code class="py plain">local disturbedCoordinates </code><code class="py keyword">=</code> <code class="py plain">{</code><code class="py value">0</code><code class="py plain">,</code><code class="py value">0</code><code class="py plain">,</code><code class="py value">0</code><code class="py plain">}</code></div>
+<div class="line number145 index144 alt2"><code class="py spaces">    </code><code class="py plain">disturbedCoordinates[</code><code class="py value">1</code><code class="py plain">] </code><code class="py keyword">=</code> <code class="py plain">insertCoordinate[</code><code class="py value">1</code><code class="py plain">]</code><code class="py keyword">+</code><code class="py plain">dx</code></div>
+<div class="line number146 index145 alt1"><code class="py spaces">    </code><code class="py plain">disturbedCoordinates[</code><code class="py value">2</code><code class="py plain">] </code><code class="py keyword">=</code> <code class="py plain">insertCoordinate[</code><code class="py value">2</code><code class="py plain">]</code><code class="py keyword">+</code><code class="py plain">dy</code></div>
+<div class="line number147 index146 alt2"><code class="py spaces">    </code><code class="py plain">disturbedCoordinates[</code><code class="py value">3</code><code class="py plain">] </code><code class="py keyword">=</code> <code class="py plain">insertCoordinate[</code><code class="py value">3</code><code class="py plain">]</code></div>
+<div class="line number148 index147 alt1"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">Copy </code><code class="py keyword">and</code> <code class="py plain">paste box </code><code class="py keyword">and</code> <code class="py plain">boxDummy</code></div>
+<div class="line number149 index148 alt2"><code class="py spaces">    </code><code class="py plain">local insertedObjects </code><code class="py keyword">=</code> <code class="py plain">sim.copyPasteObjects({box,boxDummy},</code><code class="py value">0</code><code class="py plain">)</code></div>
+<div class="line number150 index149 alt1"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">Update last inserted box time</code></div>
+<div class="line number151 index150 alt2"><code class="py spaces">    </code><code class="py plain">T_last_inserted </code><code class="py keyword">=</code> <code class="py plain">sim.getSimulationTime()</code></div>
+<div class="line number152 index151 alt1"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">Move </code><code class="py keyword">and</code> <code class="py plain">rotate</code></div>
+<div class="line number153 index152 alt2"><code class="py spaces">    </code><code class="py plain">sim.setObjectPosition(insertedObjects[</code><code class="py value">1</code><code class="py plain">],</code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">,disturbedCoordinates)</code></div>
+<div class="line number154 index153 alt1"><code class="py spaces">    </code><code class="py plain">sim.setObjectOrientation(insertedObjects[</code><code class="py value">1</code><code class="py plain">],</code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">,{</code><code class="py value">0</code><code class="py plain">,</code><code class="py value">0</code><code class="py plain">,dphi})</code></div>
+<div class="line number155 index154 alt2"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">Store handles to boxes </code><code class="py keyword">and</code> <code class="py plain">dummies</code></div>
+<div class="line number156 index155 alt1"><code class="py spaces">    </code><code class="py plain">table.insert(boxList,insertedObjects[</code><code class="py value">1</code><code class="py plain">])</code></div>
+<div class="line number157 index156 alt2"><code class="py spaces">    </code><code class="py plain">table.insert(boxDummyList,insertedObjects[</code><code class="py value">2</code><code class="py plain">]) </code></div>
+<div class="line number158 index157 alt1"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py plain">Decide </code><code class="py keyword">if</code> <code class="py functions">object</code> <code class="py keyword">is</code> <code class="py plain">good </code><code class="py keyword">or</code> <code class="py plain">bad</code></div>
+<div class="line number159 index158 alt2"><code class="py spaces">    </code><code class="py plain">local decision </code><code class="py keyword">=</code> <code class="py plain">math.random() </code></div>
+<div class="line number160 index159 alt1"><code class="py spaces">    </code><code class="py keyword">if</code> <code class="py plain">decision &lt;</code><code class="py keyword">=</code> <code class="py plain">goodPercentage then</code></div>
+<div class="line number161 index160 alt2"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py functions">Object</code> <code class="py keyword">is</code> <code class="py plain">good, assign goodColor</code></div>
+<div class="line number162 index161 alt1"><code class="py spaces">        </code><code class="py plain">sim.setShapeColor(insertedObjects[</code><code class="py value">1</code><code class="py plain">],nil,sim.colorcomponent_ambient_diffuse,goodColor)</code></div>
+<div class="line number163 index162 alt2"><code class="py spaces">        </code><code class="py plain">table.insert(boolList,true)</code></div>
+<div class="line number164 index163 alt1"><code class="py spaces">    </code><code class="py keyword">else</code></div>
+<div class="line number165 index164 alt2"><code class="py spaces">    </code><code class="py keyword">-</code><code class="py keyword">-</code> <code class="py functions">Object</code> <code class="py keyword">is</code> <code class="py plain">bad, assign random color</code></div>
+<div class="line number166 index165 alt1"><code class="py spaces">        </code><code class="py plain">sim.setShapeColor(insertedObjects[</code><code class="py value">1</code><code class="py plain">],nil,sim.colorcomponent_ambient_diffuse,{rand1,rand2,rand3})</code></div>
+<div class="line number167 index166 alt2"><code class="py spaces">        </code><code class="py plain">table.insert(boolList,false)</code></div>
+<div class="line number168 index167 alt1"><code class="py spaces">    </code><code class="py plain">end</code></div>
+<div class="line number169 index168 alt2"><code class="py plain">end</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>W17</h3>
+<p>期末報告影片</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/0UrvOlKMhF0" width="560"></iframe></p>
+</div>
+</div>
 <h1>Develop</h1>
 <p><a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 的開發, 可以在一個目錄中放入 cmsimde, 然後將 up_dir 中的內容放到與 cmsimde 目錄同位階的地方, 使用 command 進入 cmsimde 目錄, 執行 python wsgi.py, 就可以啟動, 以瀏覽器 https://localhost:9443 就可以連接, 以 admin 作為管理者密碼, 就可以登入維護內容.</p>
 <p>cmsimde 的開發採用 Leo Editor, 開啟 cmsimde 目錄中的 cmsimde.leo 就可以進行程式修改, 結束後, 若要保留網際內容, 只要將 cmsimde 外部的內容倒回 up_dir 目錄中即可後續對 cmsimde 遠端倉儲進行改版.</p>
