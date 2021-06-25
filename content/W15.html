@@ -1,0 +1,247 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>CMSiMDE</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>40723233</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">40723233</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='WORKS.html'>WORKS</a><ul class='dropdown'><li class='has-children'><a href='stage 1.html'>stage 1</a><ul class='dropdown'><li><a href='W1.html'>W1</a><li><a href='W2~W3.html'>W2~W3</a><li><a href='W4.html'>W4</a><li><a href='W5.html'>W5</a></li></ul><li class='has-children'><a href='stage 2.html'>stage 2</a><ul class='dropdown'><li><a href='W6.html'>W6</a><li><a href='W7.html'>W7</a><li><a href='W8.html'>W8</a><li><a href='W9.html'>W9</a></li></ul><li class='has-children'><a href='stage 3.html'>stage 3</a><ul class='dropdown'><li><a href='W10 小組task.html'>W10 小組task</a><li><a href='W11~W14.html'>W11~W14</a><li><a href='W15.html'>W15</a><li><a href='W16.html'>W16</a></li></li></ul></ul><li><a href='Develop.html'>Develop</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">W11~W14 << <a href='W11~W14.html'>Previous</a> <a href='W16.html'>Next</a> >> W16<br /><h1>W15</h1>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/IKOGwoJ2HLk" width="560"></iframe></p>
+<p>影片翻譯</p>
+<p>我們在前面看到了這個簡單的雙連桿機器人關於正向運動學的講座。</p>
+<p>描述了該機器人的工具提示位姿簡單地由兩個數字，坐標 x 和 y 相對於世界坐標系。</p>
+<p>所以，這里的問題是，給定 x 和 y，我們要確定連接的角度 Q1和 Q2。</p>
+<p>我們將遵循的解決方案在這個特定的部分是一個幾何</p>
+<p>一。</p>
+<p>我們將從一個簡單的作品開始的建設。</p>
+<p>我們將覆蓋紅色三角形在我們的機器人之上。</p>
+<p>我們知道終點坐標是x，y，所以三角形的垂直高度是 y，水平寬度是 x。並且，使用畢達哥拉斯定理，我們可以寫出r 平方等於 x 平方加上 y 平方。到目前為止，很容易。現在，我們要看看這個三角形此處以紅色突出顯示，我們想確定角度α。為了做到這一點，我們需要使用余弦規則。而且，如果你對余弦有點生疏<br/>規則，這里有一點覆習。我們有一個任意三角形。我們不必有任何直角它，我們將標記長度這條邊作為 A和相反的角度邊緣，我們將標記為小 a。而且，我們對這條邊和這條邊做同樣的事情角度，還有這條邊和這個角。所以，總而言之，雙方都被標記為首都A、B 和 C，角度標記為小a、小b和小c。</p>
+<p>所以，余弦規則就是這種關系這里。這有點像畢達哥拉斯定理，除了<br/>對於這個額外的術語，最後的 cos一個在里面。</p>
+<p>現在，讓我們將余弦規則應用於我們看了一會兒特定的三角形前。</p>
+<p>寫下來很簡單這種特殊的關系。我們可以隔離術語 cos alpha，它給出<br/>我們感興趣的角度α在。</p>
+<p>而且，它是根據常數定義的鏈接長度，A1 和 A2 以及位置末端執行器，x 和 y。</p>
+<p>我們可以寫出這個簡單的關系角α和Q2。</p>
+<p>而且，我們從余弦的形狀知道Q2 的 cos 必須等於負的函數cos 阿爾法。</p>
+<p>這一次，我們只寫一個表達式對於連接角 Q2 的余弦。</p>
+<p>現在，我們要再畫一個紅色三角形，我們將應用一些簡單的三角函數在這里。</p>
+<p>如果我們知道 Q2，那麽我們就知道這個長度和這個紅色三角形的長度。</p>
+<p>我們可以把這個關系寫成正弦的連接角 Q2。</p>
+<p>現在，我們可以考慮這個更大的三角形其角為β，此邊長為三角形在這里以藍色給出。</p>
+<p>並且，三角形另一邊的長度這是。</p>
+<p>所以，現在我們可以寫一個表達式此處的這些參數的角度β。回到我們畫的紅色三角形<br/>之前，我們可以建立之間的關系</p>
+<p>Q1 和角β。</p>
+<p>介紹另一個角度，這個伽馬我們可以寫出之間的關系</p>
+<p>角度伽馬和工具提示坐標 x和y</p>
+<p>現在，我們可以寫出一個簡單的關系我們構建的角度，伽馬和 beta 以及我們感興趣的連接角其中是 Q1。</p>
+<p>而且，總的關系看起來有些東西像這樣。</p>
+<p>相當覆雜的關系，它給了我們連接的角度，即 Q1</p>
+<p>末端執行器坐標 y 和 x，以及一堆常量，a1 和 a2，它是</p>
+<p>也是第二關節角度的函數，Q2。所以，讓我們總結一下我們有什麽派生於此。</p>
+<p>我們有 Q2 的余弦表達式我們有 Q1 的表達式。</p>
+<p>現在，余弦函數關於0.所以，如果我們知道余弦值Q2，那麽有兩種可能的解決方案，一個正角和一個負角。我們將明確選擇積極的角度，這意味著我可以寫出這個表達式這里。</p>
+<p>現在，我們有了我們所說的逆這個雙連桿機器人的運動學解決方案。</p>
+<p>我們有兩個連接角的表達式，Q1 和 Q2 在末端執行器姿勢方面</p>
+<p>x 和 y，以及一堆常量。你注意到這兩個方程不是獨立的。</p>
+<p>事實上，Q1 的方程取決於Q2 的解決方案。</p>
+<p>在這種情況下，Q2 是負數，我們將用負數寫出 Q2 的解符號在反余弦前面。</p>
+<p>現在，我們需要解決 Q1，所以我們要介紹這個特殊的紅色三角形，</p>
+<p>我們之前求解的角度β，以及用術語定義的角度伽馬y 和 x。</p>
+<p>現在，我們寫一個稍微不同的關系在 Q1、gamma 和 beta 之間，與什麽不同</p>
+<p>我們以前有過。涉及到符號的變化。然後，我們可以替換之前的所有方程並提出這個表達式</p>
+<p>對於 Q1。同樣，這里的符號发生了變化。</p>
+<p>以前，這是一個負面信號。</p>
+<p>而且，這里是總結形式的解決方案對於我們的雙連桿的逆運動學</p>
+<p>當機器人處於這種特定配置時，其中 Q2 為負。</p>
+<p>讓我們比較兩種解決方案，案例其中 Q2 為正，Q2 為正的情況是否定的</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/eIZuz1XCd0w" width="560"></iframe></p>
+<p>這里我們有與我們相同的兩個鏈接機器人只是看著，但這次我們要使用分析方法解決它，即<br/>我們是否會更多地依賴代數，</p>
+<p>特定的線性代數而不是幾何。我們有一個表達式 E，它是齊次的表示姿勢的變換<br/>機器人終結者，我們看了這個</p>
+<p>在上一課中，我們可以編寫 endefector構成一個基本齊次序列轉換。 Q1 的旋轉，平移<br/>沿 X 方向 A1，旋轉Q2 然後在 X 方向上平移通過 A2。如果我展開這個，乘以所有一起轉換，我得到了表達顯示在這里；三乘三同構變換</p>
+<p>表示機器人姿態的矩陣終結者。</p>
+<p>現在對於這個特殊的兩連桿機器人，我們只對它的位置感興趣endefector，它是 X 和 Y 坐標，它們這兩個元素是同質的嗎</p>
+<p>變換矩陣，所以我要覆制那些出來。所以這里又是我們的表達</p>
+<p>對於 X 和 Y 我們要做的是一個相當常見的技巧，我們要平方並添加這兩個方程，我得到了一個關系看起來像這樣。現在我可以解決</p>
+<p>根據 endefector 的關節角度 Q2姿勢 X 和 Y 以及機器人的常數 A1 和 A2。現在我要做的是應用總和<br/>的角度身份。我要擴展這些項，Q1 的正弦加 Q2 或 Q1 的余弦加<br/>Q2 為了讓生活更輕松一點，我打算建造一些變電站，所以無論在哪里<br/>我有 cos Q2，我要寫 C2 以及在哪里</p>
+<p>曾經我有正弦 Q2，我要寫 S2。這是一個相當常見的速記，當人們正在研究機器人運動學方程。<br/>這是制作後的方程式替代品。看這兩個方程，我可以看到他們掉進了一個很好的井里已知形式，對於該形式有一個非常眾所周知的解決方案。所以我要考慮只是其中一個方程，方程為Y 並使用我們眾所周知的身份</p>
+<p>解決方案，我可以確定變量小a、小b和小c一旦我確定了這些，我就可以只需寫下 Q1 的解決方案，即在這個特定的情況下相當於 theta案件。</p>
+<p>這里再次是我們對 Q1 的表達式，覆制從上一張幻燈片結束，我們可能還記得從我們早期的工作中我們確定這種特殊的關系； X平方加Y 平方等於這個特定的覆數<br/>表達。所以我可以用和代替它</p>
+<p>做一些簡化，我最終得到這個Q1 的表達式稍微簡單一些。和這是我得到的相同表達上一節中的幾何方法。</p>
+<br />W11~W14 << <a href='W11~W14.html'>Previous</a> <a href='W16.html'>Next</a> >> W16</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
